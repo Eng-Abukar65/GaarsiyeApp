@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Petrol Delivery - Select Fuel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex justify-center">
+<div class="relative flex h-full min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-start focus:outline-none">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Petrol Delivery</h2>
+</div>
+<!-- Progress Indicator -->
+<div class="flex flex-col gap-3 p-6">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal">Ordering Progress</p>
+<p class="text-primary text-sm font-bold leading-normal">Step 1 of 3</p>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-slate-800 h-2 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 33.33%;"></div>
+</div>
+</div>
+<!-- Hero Section/Visual -->
+<div class="px-6 py-4">
+<div class="relative h-40 w-full overflow-hidden rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary text-6xl opacity-50">local_gas_station</span>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-slate-900 dark:text-slate-100 tracking-tight text-2xl font-bold leading-tight">Choose your fuel</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Select the best option for your vehicle</p>
+</div>
+</div>
+</div>
+<!-- Fuel Options -->
+<div class="flex flex-col gap-4 p-6">
+<label class="group relative flex items-center gap-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 p-5 transition-all cursor-pointer hover:border-primary/50 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input checked="" class="h-6 w-6 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark checked:border-primary" name="fuel_type" type="radio"/>
+<div class="flex grow flex-col">
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-normal">Petrol 95</p>
+<span class="px-2 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-[10px] font-bold uppercase tracking-wider text-slate-500">Regular</span>
+</div>
+<p class="text-primary text-lg font-bold leading-normal mt-1">$2.15 <span class="text-xs font-normal text-slate-500 dark:text-slate-400">/ litre</span></p>
+</div>
+<div class="flex items-center justify-center size-10 rounded-lg bg-slate-100 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-500">water_drop</span>
+</div>
+</label>
+<label class="group relative flex items-center gap-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 p-5 transition-all cursor-pointer hover:border-primary/50 has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<input class="h-6 w-6 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark checked:border-primary" name="fuel_type" type="radio"/>
+<div class="flex grow flex-col">
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-normal">Petrol 98</p>
+<span class="px-2 py-0.5 rounded-full bg-primary/20 text-[10px] font-bold uppercase tracking-wider text-primary">Premium</span>
+</div>
+<p class="text-primary text-lg font-bold leading-normal mt-1">$2.45 <span class="text-xs font-normal text-slate-500 dark:text-slate-400">/ litre</span></p>
+</div>
+<div class="flex items-center justify-center size-10 rounded-lg bg-slate-100 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-500">bolt</span>
+</div>
+</label>
+</div>
+<!-- Disclaimer -->
+<div class="px-6 py-2">
+<div class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50">
+<span class="material-symbols-outlined text-slate-500 text-sm mt-0.5">info</span>
+<p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Prices are updated every hour based on market rates. Delivery fees will be calculated at the final step.</p>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="mt-auto flex px-6 py-8">
+<button class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/25 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="truncate">Continue to Location</span>
+<span class="material-symbols-outlined ml-2 text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

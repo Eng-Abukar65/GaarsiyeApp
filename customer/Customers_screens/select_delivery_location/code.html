@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Interactive Map Background -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-slate-800" data-alt="Dark stylized city map with navigation routes" data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9-7hUFJLm9Mw5ubdY84O3iLuLfh0CAPzterKqQ5m3VjpVRlj6nxOHEdlWYRtYWFZkTC2p9ANSsdKMuEeCcUUk_fjP3BbQKfGZoMnuyX0FiftWZLfxudLv46YYPhe_2chlqUU1yNJgp-R9mJc8Qq3FuVS3H566UuJakRHo3peGgYuZJ0DpYZ8j2S6zGXrZjrcshXsW2IKnORpTA9iplC6-QM0i1p9F71OukYIwed2t8cuw3A9s0K6KtFGXYpM9W0z9ITxLIxPwx78'); background-size: cover; background-position: center;">
+</div>
+<!-- Map Overlay for Darker Feel -->
+<div class="absolute inset-0 bg-background-dark/40 pointer-events-none"></div>
+</div>
+<!-- Top Navigation & Search -->
+<div class="relative z-10 p-4 space-y-3">
+<div class="flex items-center justify-between">
+<button class="flex size-11 items-center justify-center rounded-xl bg-background-dark/80 backdrop-blur-md text-slate-100 shadow-lg border border-slate-700/50">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1 px-4">
+<h2 class="text-center text-lg font-bold text-white drop-shadow-md">Set Delivery Location</h2>
+</div>
+<div class="size-11"></div> <!-- Spacer for symmetry -->
+</div>
+<div class="w-full max-w-2xl mx-auto">
+<div class="relative flex items-center">
+<div class="absolute left-4 text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 bg-background-dark/90 backdrop-blur-md border border-slate-700/50 rounded-xl text-white placeholder:text-slate-500 focus:ring-2 focus:ring-primary focus:border-transparent shadow-2xl" placeholder="Enter street address or landmark" type="text" value="245 Market St, San Francisco"/>
+</div>
+</div>
+</div>
+<!-- Central Pin Indicator -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+<div class="flex flex-col items-center mb-12">
+<!-- Tooltip above pin -->
+<div class="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full mb-2 shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">local_gas_station</span>
+                    DELIVER HERE
+                </div>
+<!-- The Pin -->
+<div class="relative flex flex-col items-center">
+<div class="text-primary drop-shadow-[0_10px_10px_rgba(37,106,244,0.5)]">
+<span class="material-symbols-outlined !text-5xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="w-2 h-2 bg-background-dark/40 rounded-full blur-[2px] mt-[-4px]"></div>
+</div>
+</div>
+</div>
+<!-- Floating Map Controls -->
+<div class="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-2">
+<button class="flex size-12 items-center justify-center rounded-xl bg-background-dark/80 backdrop-blur-md text-slate-100 shadow-lg border border-slate-700/50">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-xl bg-background-dark/80 backdrop-blur-md text-slate-100 shadow-lg border border-slate-700/50">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<div class="h-2"></div>
+<button class="flex size-12 items-center justify-center rounded-xl bg-primary text-white shadow-lg border border-primary/20">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<!-- Bottom Sheet / Confirmation Area -->
+<div class="absolute bottom-0 left-0 right-0 z-20">
+<!-- Drag Handle for Visual Design -->
+<div class="flex justify-center mb-2">
+<div class="w-12 h-1.5 rounded-full bg-slate-500/50 backdrop-blur-md"></div>
+</div>
+<div class="bg-background-dark border-t border-slate-800 rounded-t-3xl p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col gap-5 max-w-2xl mx-auto">
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-xl">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div class="flex-1">
+<h3 class="text-slate-400 text-sm font-medium uppercase tracking-wider">Current Selection</h3>
+<p class="text-white text-lg font-semibold leading-tight mt-1">Market District, South of Market</p>
+<p class="text-slate-500 text-sm mt-0.5">San Francisco, CA 94105</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 py-2">
+<div class="bg-slate-800/40 p-3 rounded-xl border border-slate-700/30 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span class="text-sm text-slate-200">25-35 mins</span>
+</div>
+<div class="bg-slate-800/40 p-3 rounded-xl border border-slate-700/30 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">payments</span>
+<span class="text-sm text-slate-200">$4.99 Delivery</span>
+</div>
+</div>
+<button class="w-full h-16 bg-primary hover:bg-primary/90 text-white font-bold text-lg rounded-xl transition-colors flex items-center justify-center gap-3 shadow-xl shadow-primary/20">
+                        Confirm Location
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Safe Area Padding for Mobile -->
+<div class="h-2"></div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

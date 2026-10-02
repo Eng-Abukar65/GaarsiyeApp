@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VendorPortal - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#2b3437",
+                        "on-secondary-fixed": "#3d3f42",
+                        "tertiary-container": "#d3e0fd",
+                        "primary": "#216489",
+                        "primary-dim": "#0c587c",
+                        "surface-container": "#eaeff1",
+                        "on-tertiary-container": "#445068",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-secondary-fixed-variant": "#5a5c5e",
+                        "primary-fixed-dim": "#a9daff",
+                        "tertiary-fixed": "#d3e0fd",
+                        "primary-fixed": "#c8e6ff",
+                        "secondary": "#5d5f62",
+                        "on-error-container": "#752121",
+                        "error-container": "#fe8983",
+                        "inverse-primary": "#95d0fa",
+                        "on-tertiary-fixed-variant": "#4e5a72",
+                        "surface-dim": "#d1dce0",
+                        "on-surface-variant": "#586064",
+                        "tertiary": "#535f78",
+                        "on-primary-container": "#0a577b",
+                        "surface-bright": "#f8f9fa",
+                        "on-background": "#2b3437",
+                        "on-primary-fixed": "#004462",
+                        "on-primary-fixed-variant": "#1d6186",
+                        "on-primary": "#f3f8ff",
+                        "surface": "#f8f9fa",
+                        "surface-tint": "#216489",
+                        "surface-container-high": "#e3e9ec",
+                        "on-secondary-container": "#505254",
+                        "primary-container": "#c8e6ff",
+                        "secondary-dim": "#515356",
+                        "on-secondary": "#f8f9fb",
+                        "error": "#9f403d",
+                        "surface-container-low": "#f1f4f6",
+                        "secondary-fixed": "#e2e2e5",
+                        "on-error": "#fff7f6",
+                        "on-tertiary": "#f8f8ff",
+                        "tertiary-fixed-dim": "#c5d2ee",
+                        "error-dim": "#4e0309",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-dim": "#47536b",
+                        "on-tertiary-fixed": "#323e54",
+                        "surface-variant": "#dbe4e7",
+                        "outline-variant": "#abb3b7",
+                        "secondary-container": "#e2e2e5",
+                        "background": "#f8f9fa",
+                        "inverse-on-surface": "#9b9d9e",
+                        "inverse-surface": "#0c0f10",
+                        "secondary-fixed-dim": "#d3d4d7",
+                        "outline": "#737c7f"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-50 dark:bg-slate-900 flex flex-col py-6 px-4 gap-2 font-['Manrope'] antialiased">
+<div class="px-4 mb-8">
+<h1 class="text-xl font-bold text-sky-900 dark:text-sky-100">VendorPortal</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Management Suite</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-sm font-medium">Purchases</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="text-sm font-medium">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person_pin">person_pin</span>
+<span class="text-sm font-medium">Drivers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="text-sm font-medium">Suppliers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="rate_review">rate_review</span>
+<span class="text-sm font-medium">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="text-sm font-medium">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sky-700 dark:text-sky-400 font-semibold border-r-4 border-sky-700 dark:border-sky-400 bg-slate-100 dark:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 px-4">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a business executive in a modern office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIRS0TDDkIZT_Dd-f2KBaTktdypEq7Ofdsp6HFZ_SQgBI2eobLEGalb_xlV-GI1PmXvaXKjdHaYtTyIzIz_-OLNTThnKqanqGHYj1LeNIvfOGF0Z3jJ19TRJLHQ4S8SGkdN8zEcjeHNnRfrbqIh0t6dOC9GSEc61nIy4cBpsLwdxk4E2B98CbaQH4YyQZVxjfTYYpqJmp3LAHGeSBlHOzZQpIDgm-EjZSlkU7sxw2L95HwInh3gCS_PjUc2SKEL-dMIlxJlT8ZLIA"/>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-900 dark:text-white">Alex Rivera</p>
+<p class="text-[10px] text-slate-500">Store Manager</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 w-full ml-64 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-100/50 dark:border-slate-800/50 flex justify-between items-center h-16 px-8 max-w-[calc(100%-16rem)] ml-auto">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-sky-500/20 rounded-lg transition-all">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-100/50 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-0 placeholder:text-slate-400" placeholder="Search settings..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-500 hover:text-sky-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-6 w-px bg-slate-200"></div>
+<div class="flex items-center gap-2 cursor-pointer group">
+<span class="text-sm font-medium text-slate-600 group-hover:text-sky-600 transition-colors">Profile</span>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZy3doJqeO7ycQvQQizP9_o-rUanRKiceGoLf1cJMsj7gybg7M6V7vgZNVWkgjT71lFbYmLExvepf15FIZIMN4zj5OGBbFx8VSWopbyNW-3mQ8JU_qLlyKSjPNKkSXDoMP6Rjrc4ReNRgHGAQ6rxVPlHliYuf90MjSk8sfnsEbqRfibMwSC4hTTeMfi-jqgPWhhqRZOR0C0ejCkL72QkgQFoIbtxBY-PJM-RUGnDPa2OiEiQfnHqjFD-php3evPfNXXbXCQTMpnLc"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 p-10 min-h-screen bg-surface">
+<div class="max-w-5xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12">
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Settings</h2>
+<p class="text-on-surface-variant text-lg">Manage your storefront presence, business details, and security preferences.</p>
+</header>
+<!-- Tabs Interface -->
+<div class="flex gap-8 mb-10 border-b border-outline-variant/15">
+<button class="pb-4 text-sm font-bold text-primary border-b-2 border-primary tracking-wide">Vendor Profile</button>
+<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors tracking-wide">Business Info</button>
+<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors tracking-wide">Notifications</button>
+<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors tracking-wide">Security</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Form Content -->
+<div class="lg:col-span-8 space-y-10">
+<!-- Vendor Profile Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 space-y-8">
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-1">Public Profile</h3>
+<p class="text-sm text-on-surface-variant">This information will be displayed to customers on your storefront.</p>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Shop Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="text" value="Urban Flora Curators"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Contact Email</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="email" value="hello@urbanflora.com"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Store Address</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" rows="3">1242 Greenhouse Lane, Suite 4B
+Portland, OR 97201</textarea>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 rounded-xl bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="minimalist botanical logo with a stylized leaf in deep teal and cream on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl6ONVq7uet48pr6JjfPk4gW_Eb0dTjWdti28fRQOsG9i0gnSDbKfvGG-ZYnpem-Jlrixmv1DOXwaoZ7BKJ5jvWEUK6ZRoMtpckuujxjqUvc7yEczgNkuDqMHq8shs_Xx_cEq-hzQgysAL4dMSXzZERlyJIT8ObUz3PeBBdWOU6crmuc6oBxqQ9Utcn65bBMNzSh_ANK6MFC7m-tEhgs25lautw_c6NKy1lJs3cJc8SYZvN76cvm5smoRnNk1teJx8_dzaHF56z4M"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Store Logo</label>
+<div class="flex gap-3">
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-lg hover:opacity-90 transition-all">Change Logo</button>
+<button class="bg-surface-container-high text-on-surface text-xs font-bold px-4 py-2 rounded-lg hover:bg-surface-container-highest transition-all">Remove</button>
+</div>
+<p class="text-[10px] text-on-surface-variant">JPG, PNG or SVG. Max size 2MB.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Info Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 space-y-8">
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-1">Business Identity</h3>
+<p class="text-sm text-on-surface-variant">Legal information for tax and compliance purposes.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Tax Identification Number (TIN)</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="text" value="XX-XXXX4829"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Operating Hours</label>
+<select class="w-full bg-surface-container-low border border-outline-variant/15 rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all">
+<option>09:00 AM - 06:00 PM</option>
+<option>08:00 AM - 05:00 PM</option>
+<option>24 Hours</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Notifications Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 space-y-8">
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-1">Notifications</h3>
+<p class="text-sm text-on-surface-variant">Choose how you want to be alerted about new orders and updates.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between py-4 border-b border-outline-variant/10">
+<div>
+<p class="font-bold text-on-surface">Email Notifications</p>
+<p class="text-xs text-on-surface-variant">Receive daily summaries and order alerts.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-4 border-b border-outline-variant/10">
+<div>
+<p class="font-bold text-on-surface">SMS Alerts</p>
+<p class="text-xs text-on-surface-variant">Instant text message for high-priority orders.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<div class="flex justify-end pt-4 pb-20">
+<button class="bg-gradient-to-br from-primary to-primary-dim text-white font-bold py-4 px-10 rounded-lg shadow-xl shadow-primary/20 hover:scale-[1.02] transition-all">
+                            Save Changes
+                        </button>
+</div>
+</div>
+<!-- Right Sidebar / Info -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/15">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="verified">verified</span>
+<h4 class="font-bold text-on-surface mb-2">Verified Merchant</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Your business identity has been verified. To change your legal name or TIN, please contact our support team directly.</p>
+<a class="inline-block mt-4 text-xs font-bold text-primary hover:underline" href="#">Learn more about verification</a>
+</div>
+<div class="bg-tertiary-container/30 rounded-xl p-6">
+<h4 class="font-bold text-on-tertiary-container mb-2">Security Tip</h4>
+<p class="text-xs text-on-tertiary-container leading-relaxed">Enable Two-Factor Authentication (2FA) in the Security tab to ensure your vendor account remains protected.</p>
+</div>
+<div class="rounded-xl overflow-hidden relative h-48 group">
+<img class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-500" data-alt="modern luxury office interior with floor-to-ceiling windows and minimalist designer furniture in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSYeULBlPW-oG52EAjDD_jzJejgwjwclUXeDJ-JHO4J6OXp50Z3plPxRcwNKh9YeYiBdtN8-sLLvU7StrloHLH80fAq0doOT378jXkKq3N6AlkYt0_1yonTL_p2sTDrzRlfctDY8d0UKJPeM6qVoVohYpUrng6c82U3iFoEcS-h4ZykUhRlnk8DZ5JkHkMQSIYNw8mFMbF8PA-kpd-IhJ_x70eOEMq1r290zdxCocwAjUzM3WpkU94FU0lGNamuD8m9GMBc8wNEGo"/>
+<div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-surface-container-lowest to-transparent">
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Store Preview</p>
+<p class="text-sm font-bold text-on-surface">Urban Flora Curators</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

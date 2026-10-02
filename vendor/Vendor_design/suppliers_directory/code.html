@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Suppliers Management | VendorPortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#2b3437",
+              "on-secondary-fixed": "#3d3f42",
+              "tertiary-container": "#d3e0fd",
+              "primary": "#216489",
+              "primary-dim": "#0c587c",
+              "surface-container": "#eaeff1",
+              "on-tertiary-container": "#445068",
+              "surface-container-highest": "#dbe4e7",
+              "on-secondary-fixed-variant": "#5a5c5e",
+              "primary-fixed-dim": "#a9daff",
+              "tertiary-fixed": "#d3e0fd",
+              "primary-fixed": "#c8e6ff",
+              "secondary": "#5d5f62",
+              "on-error-container": "#752121",
+              "error-container": "#fe8983",
+              "inverse-primary": "#95d0fa",
+              "on-tertiary-fixed-variant": "#4e5a72",
+              "surface-dim": "#d1dce0",
+              "on-surface-variant": "#586064",
+              "tertiary": "#535f78",
+              "on-primary-container": "#0a577b",
+              "surface-bright": "#f8f9fa",
+              "on-background": "#2b3437",
+              "on-primary-fixed": "#004462",
+              "on-primary-fixed-variant": "#1d6186",
+              "on-primary": "#f3f8ff",
+              "surface": "#f8f9fa",
+              "surface-tint": "#216489",
+              "surface-container-high": "#e3e9ec",
+              "on-secondary-container": "#505254",
+              "primary-container": "#c8e6ff",
+              "secondary-dim": "#515356",
+              "on-secondary": "#f8f9fb",
+              "error": "#9f403d",
+              "surface-container-low": "#f1f4f6",
+              "secondary-fixed": "#e2e2e5",
+              "on-error": "#fff7f6",
+              "on-tertiary": "#f8f8ff",
+              "tertiary-fixed-dim": "#c5d2ee",
+              "error-dim": "#4e0309",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-dim": "#47536b",
+              "on-tertiary-fixed": "#323e54",
+              "surface-variant": "#dbe4e7",
+              "outline-variant": "#abb3b7",
+              "secondary-container": "#e2e2e5",
+              "background": "#f8f9fa",
+              "inverse-on-surface": "#9b9d9e",
+              "inverse-surface": "#0c0f10",
+              "secondary-fixed-dim": "#d3d4d7",
+              "outline": "#737c7f"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-50 dark:bg-slate-900 flex flex-col py-6 px-4 gap-2 font-['Manrope'] antialiased">
+<div class="mb-8 px-2">
+<h1 class="text-xl font-bold text-sky-900 dark:text-sky-100">VendorPortal</h1>
+<p class="text-xs text-slate-500 font-medium tracking-wider uppercase mt-1">Management Suite</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="text-sm font-semibold">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+<span class="text-sm font-semibold">Purchases</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">package_2</span>
+<span class="text-sm font-semibold">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span class="text-sm font-semibold">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="text-sm font-semibold">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">person_pin</span>
+<span class="text-sm font-semibold">Drivers</span>
+</a>
+<!-- Active Tab: Suppliers -->
+<a class="flex items-center gap-3 px-3 py-2.5 text-sky-700 dark:text-sky-400 font-semibold border-r-4 border-sky-700 dark:border-sky-400 bg-slate-100 dark:bg-slate-800/50 rounded-l-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="handshake">handshake</span>
+<span class="text-sm">Suppliers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="text-sm font-semibold">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">rate_review</span>
+<span class="text-sm font-semibold">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined text-[20px]">local_offer</span>
+<span class="text-sm font-semibold">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors rounded-lg group mt-auto" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-semibold">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 z-40 w-full ml-64 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-100/50 dark:border-slate-800/50 shadow-sm dark:shadow-none flex justify-between items-center h-16 px-8 max-w-[calc(100%-16rem)] font-['Manrope'] text-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-sky-500/20 rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+<input class="w-full bg-slate-100/50 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-0 focus:outline-none placeholder:text-slate-400" placeholder="Search suppliers, categories, or contact details..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-500 hover:text-sky-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full ring-2 ring-white"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-200 dark:border-slate-800">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Alex Thompson</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Fleet Manager</p>
+</div>
+<img alt="Profile" class="w-8 h-8 rounded-lg object-cover" data-alt="professional headshot of a corporate manager in a clean modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKOct_G_hrW_cPvJcbl-bVNePtw-21c8aeN2yC9ZbrcMAvdJ0xOJtOd_W3PQcH2m17nd73EkWLH39OaNOn_GbbL7g8h-_0YKcrTbX59Dnatbdt0rKvBdH0Sb_IzVzjRMk73g2qJ6RVhkPsns-soyNb2-AFS40X95KWzLV_k43tEcsipmf7AvBDQuLjVuA6_mIE9SJ6iW4ZAUhGxjA73dUUVT1-N06kQiIXb0OHw3EvKdXxYsvrP1A4W_fS4IO2BsanEJQpeeiHjXQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 min-h-[calc(100vh-4rem)] bg-surface">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Page Header Area -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Suppliers Network</h2>
+<p class="text-on-surface-variant font-medium">Manage your global procurement and supply chain partners.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2.5 bg-surface-container-high text-on-primary-fixed font-semibold rounded-lg hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+                        Export Report
+                    </button>
+<button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-dim text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+                        Add Supplier
+                    </button>
+</div>
+</div>
+<!-- Stats Overview - Asymmetric Bento Layout -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-on-surface-variant font-semibold text-xs uppercase tracking-widest mb-1">Active Procurement</p>
+<h3 class="text-4xl font-extrabold text-primary mb-4 tracking-tighter">42 Partners</h3>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-white" data-alt="logotype for a fuel supply company minimalist blue and white design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwqyRxgXMpsZdpqlIfLUmrsMpwnCd02nJJg3lh34dT-yOgCvLdJ1HuTtFY0nslwW5Bcdj-wo-G0NfxbXhzKJjOcl80cvyWJtcSNAkBeBIKJj89lBEysCyWI8735aK4zvHiDAIiJT9POgFygGsTRA80tobWPedkgB06KeiVxvhjkSFzX-jlnFW8Wu9J3GRp5wA6x-bwcHYmIDhjrcGKOFYHrgkuuT7SczeLyI2Ho7yhmanhuJfBqT1YCnxRKsFyITSfKt-0kLfk6zY"/>
+<img class="w-8 h-8 rounded-full border-2 border-white" data-alt="industrial logo for gas distribution corporate identity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIlIQIvfgi41eVRvfpmc9unC9z_2m2gNok20GB-dc8ntegGAT_Oa5rQAgxJzluhyqjye43_9wmXv8kJNEA5_8Jm2HPVhls2CXy0SJi8LziLHodjPNa9mkNw7HgZApnrQQRA1Thf88ec49zqtFJqlyrtTSvrLYb5MTKzIL7apU5N5ZprMfTk4wf5jN4jzthuhX1mjx2zN1aZnxtqtSAtpBguwWgneDV-KMt0Rj-G8E2P7-R7R17-dbLnv_zHAuNJi7AKTDWf9T9WN8"/>
+<img class="w-8 h-8 rounded-full border-2 border-white" data-alt="modern logo for automotive parts supplier metallic finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsTKs44d4e8NqaLEOWFnCBIUYIlwuI7eUqVTVtFtsVcg-bJujBST3xDHaoGF3ttA3lYffHBnipZuYusKbRLQ9Jh-RNc5RoA9EfhwdLjf8DpIKeC-qputk_cQHJ4oBPY-nRrMgDUcPAphdHw94W1LZZw_L24s-wgQgRsarYzUHWPB9m2IOkL9WA2vcRMhWUTHAzAsW3neWUuWPHCvZ9457JFphENJu3PQR3nG09L6HEecddPqFZOmSWKQTuIbSsp3ONw3x9KD1PzTY"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-[10px] font-bold text-primary">+39</div>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">+4 new this month</span>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[140px]" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<p class="text-on-surface-variant font-semibold text-xs uppercase tracking-widest mb-1">Supply Reliability</p>
+<h3 class="text-3xl font-extrabold text-on-surface mb-2">98.4%</h3>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98.4%] rounded-full"></div>
+</div>
+<p class="text-[11px] mt-3 text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-green-500">trending_up</span>
+                        2.1% improvement from Q3
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<p class="text-on-surface-variant font-semibold text-xs uppercase tracking-widest mb-1">Pending Orders</p>
+<h3 class="text-3xl font-extrabold text-on-surface mb-2">12</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded uppercase tracking-wider">8 Fuel</span>
+<span class="px-2 py-0.5 bg-primary-container text-on-primary-container text-[10px] font-bold rounded uppercase tracking-wider">4 Parts</span>
+</div>
+</div>
+</div>
+<!-- Main Table Section -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-8 py-6 flex items-center justify-between border-b border-outline-variant/15">
+<h3 class="text-lg font-bold text-on-surface">Supplier Directory</h3>
+<div class="flex items-center gap-4">
+<div class="flex bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1.5 text-xs font-bold bg-white text-primary rounded shadow-sm">All</button>
+<button class="px-3 py-1.5 text-xs font-bold text-on-surface-variant hover:text-on-surface">Fuel</button>
+<button class="px-3 py-1.5 text-xs font-bold text-on-surface-variant hover:text-on-surface">Gas</button>
+<button class="px-3 py-1.5 text-xs font-bold text-on-surface-variant hover:text-on-surface">Parts</button>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="text-left px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Supplier Name</th>
+<th class="text-left px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Contact Person</th>
+<th class="text-left px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Phone / Email</th>
+<th class="text-left px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Category</th>
+<th class="text-left px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Rating</th>
+<th class="text-right px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-primary font-bold">NP</div>
+<div>
+<p class="font-bold text-on-surface">NexGen Petroleum</p>
+<p class="text-xs text-on-surface-variant">Global Logistics Hub</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface font-medium">Sarah Jenkins</td>
+<td class="px-8 py-5 text-sm text-on-surface">
+<p>+1 (555) 012-4492</p>
+<p class="text-[11px] text-on-surface-variant">s.jenkins@nexgen.com</p>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Fuel</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-sm">4.9</span>
+</div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="px-4 py-1.5 bg-primary/10 text-primary hover:bg-primary hover:text-white font-bold text-xs rounded transition-all">Order Stock</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary-container rounded-lg flex items-center justify-center text-tertiary font-bold">AG</div>
+<div>
+<p class="font-bold text-on-surface">Atlas Gas &amp; Energy</p>
+<p class="text-xs text-on-surface-variant">Industrial Solutions</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface font-medium">Michael Chen</td>
+<td class="px-8 py-5 text-sm text-on-surface">
+<p>+1 (555) 012-8831</p>
+<p class="text-[11px] text-on-surface-variant">m.chen@atlasgas.io</p>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Gas</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-sm">4.7</span>
+</div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="px-4 py-1.5 bg-primary/10 text-primary hover:bg-primary hover:text-white font-bold text-xs rounded transition-all">Order Stock</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center text-secondary font-bold">VP</div>
+<div>
+<p class="font-bold text-on-surface">Velocity Parts Co.</p>
+<p class="text-xs text-on-surface-variant">OEM Distribution</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface font-medium">Elena Rodriguez</td>
+<td class="px-8 py-5 text-sm text-on-surface">
+<p>+1 (555) 012-2210</p>
+<p class="text-[11px] text-on-surface-variant">e.rod@velocity.parts</p>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Parts</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-sm">4.5</span>
+</div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="px-4 py-1.5 bg-primary/10 text-primary hover:bg-primary hover:text-white font-bold text-xs rounded transition-all">Order Stock</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-primary font-bold">BS</div>
+<div>
+<p class="font-bold text-on-surface">Blue Sky Lubricants</p>
+<p class="text-xs text-on-surface-variant">Premium Fuels</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface font-medium">David Miller</td>
+<td class="px-8 py-5 text-sm text-on-surface">
+<p>+1 (555) 012-9904</p>
+<p class="text-[11px] text-on-surface-variant">orders@bluesky.com</p>
+</td>
+<td class="px-8 py-5">
+<span class="px-2.5 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Fuel</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-[18px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="font-bold text-sm">4.2</span>
+</div>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="px-4 py-1.5 bg-primary/10 text-primary hover:bg-primary hover:text-white font-bold text-xs rounded transition-all">Order Stock</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 bg-surface-container-low/30 border-t border-outline-variant/10 flex items-center justify-between">
+<p class="text-xs font-medium text-on-surface-variant">Showing 4 of 42 suppliers</p>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded border border-primary text-primary bg-primary/5 flex items-center justify-center text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center text-xs font-bold text-on-surface-variant hover:bg-white transition-colors">2</button>
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center text-xs font-bold text-on-surface-variant hover:bg-white transition-colors">3</button>
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Meta Area -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-white rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Compliance &amp; Verification</h4>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">All listed suppliers have undergone a 48-point quality and regulatory compliance check. Last audit completed on Oct 12, 2023.</p>
+<a class="text-xs font-bold text-primary mt-3 inline-block hover:underline" href="#">Download Compliance Matrix →</a>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-white rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-primary">add_business</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Global Sourcing Program</h4>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Looking for specialized parts or alternative fuel sources? Access our extended marketplace of 2,400+ verified global vendors.</p>
+<a class="text-xs font-bold text-primary mt-3 inline-block hover:underline" href="#">Explore Marketplace →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

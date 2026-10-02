@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 px-4 py-4 flex items-center gap-4">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined block">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">Select Fuel Station</h1>
+</header>
+<!-- Search and Filters -->
+<div class="px-4 pt-4 pb-2 space-y-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 placeholder:text-slate-500" placeholder="Search for fuel stations..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex items-center gap-1 shrink-0 px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">
+                Nearest <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-1 shrink-0 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium">
+                Top Rated <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-1 shrink-0 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium">
+                Lowest Price <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-1 shrink-0 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium">
+                Open Now <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Station List -->
+<main class="flex-1 px-4 py-2 space-y-4 overflow-y-auto">
+<!-- Station Card 1 -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-sm">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<img alt="Shell station" class="w-full h-full object-cover" data-alt="Shell gas station company logo on building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0i9YPQDl3jsGK40daWB1US3PjERk1ScYE3K4YfOo03PzbvszF_4kwRW3Ott6ouNX7xGBHMkugLqR2xV6y69tC6Nj4bT_5Kqy1urUiCjhACIVCvK8tXD58ts75V4iHV7Wmcta6Q08LLLI5jSjxlXEYl9zzaMUI-Ztw7_2D8SvBhJAo89JLlPIk4GbaHMoMzRW3UsXbB3y7Yc5vFev-rFyunvxMppiYFZyaJwsw-5ST7dOGV0LihddUitze_5UXG4tKKxlg791iKVo"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg leading-tight">Shell - Downtown</h3>
+<div class="flex items-center text-amber-500 text-sm font-bold">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="ml-1">4.8</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> 1.2 km away
+                        </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 uppercase font-semibold">Price/L (95 Octane)</span>
+<span class="text-primary font-bold text-lg">$1.45</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-bold transition-colors">
+                            Select
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Station Card 2 -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-sm">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<img alt="BP station" class="w-full h-full object-cover" data-alt="BP gas station logo sign at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGeoD2l-7t4xw_KuUHY70_9NImNDSnNFGVubPhEhOnrpcr88rScaLpbH46If31Wm2_PQ786JUK6JRqfa0pZDGOcXrGTtzaHkmqOEYuOOs-AYFios7V1G9nK49lTLuu65N8Wmb7MDFSqsQku8wSdJIOc9VDsWZtZ7_IWGw7R8O00YXbPfDu0Gxr7p4jQeQduM-BXIs_fVWFT9Q7KNsZjSk9xp3NPs-Ba-O1ZZ6ce6b37GHV-Kau0nFntyCJVzuOiJA9LLHsZKLmguI"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg leading-tight">BP - West Park</h3>
+<div class="flex items-center text-amber-500 text-sm font-bold">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="ml-1">4.5</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> 2.8 km away
+                        </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 uppercase font-semibold">Price/L (95 Octane)</span>
+<span class="text-primary font-bold text-lg">$1.42</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-bold transition-colors">
+                            Select
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Station Card 3 -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-sm">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<img alt="Total Energies" class="w-full h-full object-cover" data-alt="Total Energies gas station pumps overview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGOKHQ9tzt_tBzYHYOcJdCi3P87Z0_3f1IBfcRsGjPO2Kcki_Lj6MrE5d5SBdNz_dEEbtixfL21PC19vY8J8U2B3xKwCqwNThWqi4dMUTr7IJgdsppEdmJ1-Qw1kl3mNFVCVVkeZkWENqWfKlhI-cOLNLRUpxiHO2iAVVsrZLSnmuDPDLcsS6Vy4n3gT4zTB8t82o23sM1gmvW9TjUGaruZeYJV3p7jhl5mNm8l3teEK-Akq01VmZLo8xQwZOiqL-Qcjn2kWITCYE"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg leading-tight">Total - Harbor View</h3>
+<div class="flex items-center text-amber-500 text-sm font-bold">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="ml-1">4.9</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> 3.5 km away
+                        </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 uppercase font-semibold">Price/L (95 Octane)</span>
+<span class="text-primary font-bold text-lg">$1.48</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-bold transition-colors">
+                            Select
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Station Card 4 -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-sm">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<img alt="Exxon station" class="w-full h-full object-cover" data-alt="Exxon station canopy with bright lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbgO9357qBNVY_Q-RGwdJ95rr4ejywd8pslyzlWnDOuVFxm9GiChLIeK6YgRz5ble2_9DDQ5kRrskAwvQ-aHGq_7wiPWDwTL1e0AiTJ7ebcD4Hti0qU6tTK4PLU5rpjyeShl5yngQq8ccdF9tF0PG9C602jOoN9r6LmtpJXGEsryDz9ucAryVMlFCVto9g7cQ1i692yObnKGZzp4kxtdKsAS4ORBre4zs2AMUHYneBpgtAHwaiFvjx6AHRB7t3TqfYqzmjBWj2Pc"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg leading-tight">Exxon - North Circle</h3>
+<div class="flex items-center text-amber-500 text-sm font-bold">
+<span class="material-symbols-outlined text-sm filled-icon">star</span>
+<span class="ml-1">4.2</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> 5.1 km away
+                        </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 uppercase font-semibold">Price/L (95 Octane)</span>
+<span class="text-primary font-bold text-lg">$1.41</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-bold transition-colors">
+                            Select
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation -->
+<nav class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex justify-around py-3 px-6">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-xs font-medium">Orders</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined filled-icon">local_gas_station</span>
+<span class="text-xs font-medium">Stations</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

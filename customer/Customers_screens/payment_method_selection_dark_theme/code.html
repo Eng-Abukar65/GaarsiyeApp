@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto min-h-screen flex flex-col shadow-2xl bg-background-dark">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between border-b border-slate-800">
+<div class="text-primary flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-slate-100">Checkout</h2>
+<div class="size-12 shrink-0"></div>
+</div>
+<div class="flex-1 overflow-y-auto px-4 py-6">
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-6">Select Payment Method</h3>
+<!-- Payment Options Container -->
+<div class="space-y-4">
+<!-- MTN Mobile Money -->
+<label class="relative flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border-2 border-primary cursor-pointer transition-colors group">
+<input checked="" class="peer hidden" name="payment" type="radio"/>
+<div class="bg-center bg-no-repeat bg-contain h-10 w-16 shrink-0 rounded bg-slate-100 dark:bg-slate-800 p-1" data-alt="MTN mobile money yellow logo icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB312C6jNeEZl05e47i4yOL6DJdp0Cdzk7cJSfDUzRJ-vgY6NAh4XjgzdkwkhiKHB2N3DE8hM5kHhLUfCrHlOC_s-G7AtjXROxxU-uekUPIdzfp4t0kRiSFcmSKAVkQ_Q4DU5PmntNdhzTvuME4PJFKdFa-wsL3mMAEUZbSGneS86HJ2cJPoAEEj6C8F61P9fMSsrESUgbLCsxZyobvB_spOwoBG_TN_Blr6S4jncnerxDOcbVZ1iqcXurAkebWnz-nz47tAh9sD_A");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="dark:text-slate-100 text-base font-semibold">MTN Mobile Money</p>
+<p class="text-slate-500 text-sm">Pay using your MTN wallet</p>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-primary/30 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary">
+<div class="w-2.5 h-2.5 bg-white rounded-full"></div>
+</div>
+</label>
+<!-- Airtel Money -->
+<label class="relative flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 cursor-pointer hover:border-primary/50 transition-colors group">
+<input class="peer hidden" name="payment" type="radio"/>
+<div class="bg-center bg-no-repeat bg-contain h-10 w-16 shrink-0 rounded bg-slate-100 dark:bg-slate-800 p-1" data-alt="Airtel money red logo icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArV3ONuJUr4KZU237VZoP1VTKRAWhldZ4b6aE4nhko-TZblw6S8PhBSloYfDZuz0D8ey131-LLdkt4QVLxM0MO_I9ME_w2Ms3Oi-nskKEb_g-cpXSnbgbjIKVgvUMCocU76MGbhNY1UAr3Im2wUqEATcMkG5eTGJRR-dOxG1cA7Ry9iszILveXpMC9-_9wKbXaizbJF8C9nLrlkWmjWQrTXK8tJ0amJ5IJjFSZzIVNaoltoZ0Vte3CafG7iiRabkUYCHj1cDm4c_M");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="dark:text-slate-100 text-base font-semibold">Airtel Money</p>
+<p class="text-slate-500 text-sm">Pay using your Airtel wallet</p>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-primary/30 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary">
+<div class="w-2.5 h-2.5 bg-white rounded-full"></div>
+</div>
+</label>
+<!-- Card Payment -->
+<label class="relative flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 cursor-pointer hover:border-primary/50 transition-colors group">
+<input class="peer hidden" name="payment" type="radio"/>
+<div class="flex gap-1 h-10 w-16 shrink-0 items-center justify-center bg-slate-100 dark:bg-slate-800 rounded">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">credit_card</span>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<div class="flex items-center gap-2">
+<p class="dark:text-slate-100 text-base font-semibold">Credit / Debit Card</p>
+</div>
+<p class="text-slate-500 text-sm">Visa, Mastercard, Amex</p>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-primary/30 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary">
+<div class="w-2.5 h-2.5 bg-white rounded-full"></div>
+</div>
+</label>
+<!-- Cash on Delivery -->
+<label class="relative flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 cursor-pointer hover:border-primary/50 transition-colors group">
+<input class="peer hidden" name="payment" type="radio"/>
+<div class="flex h-10 w-16 shrink-0 items-center justify-center bg-slate-100 dark:bg-slate-800 rounded">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">payments</span>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<p class="dark:text-slate-100 text-base font-semibold">Cash on Delivery</p>
+<p class="text-slate-500 text-sm">Pay when you receive items</p>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-primary/30 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary">
+<div class="w-2.5 h-2.5 bg-white rounded-full"></div>
+</div>
+</label>
+</div>
+<!-- Promo Code Section -->
+<div class="mt-8">
+<p class="text-slate-500 text-sm">Promo Code</p>
+<div class="flex gap-2">
+<input class="flex-1 bg-slate-800/50 border-slate-700/50 rounded-lg focus:ring-primary focus:border-primary text-slate-100" placeholder="Enter code" type="text"/>
+<button class="px-6 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors">Apply</button>
+</div>
+</div>
+</div>
+<!-- Footer Summary & Action -->
+<div class="bg-background-dark p-6 border-t border-slate-800">
+<div class="flex flex-col gap-2 mb-6">
+<div class="flex justify-between items-center dark:text-primary/60">
+<span class="text-sm">Subtotal</span>
+<span class="text-sm font-medium">$124.00</span>
+</div>
+<div class="flex justify-between items-center dark:text-primary/60">
+<span class="text-sm">Delivery Fee</span>
+<span class="text-sm font-medium">$5.50</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-slate-100 dark:border-primary/10 border-slate-800">
+<span class="text-lg font-bold dark:text-slate-100">Total Amount</span>
+<span class="text-2xl font-black text-primary">$129.50</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/25 flex items-center justify-center gap-2">
+                Place Order
+                <span class="material-symbols-outlined">chevron_right</span>
+</button>
+<p class="text-center text-xs text-slate-400 dark:text-primary/40 mt-4">By placing an order, you agree to our Terms &amp; Conditions</p>
+</div>
+</div>
+</body></html>

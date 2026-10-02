@@ -1,0 +1,89 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+customer/.env
+customer/.env.*
+!customer/.env.example
+vendor/.env
+vendor/.env.*
+!vendor/.env.example
+
+# Dependencies
+node_modules/
+backend/node_modules/
+vendor/node_modules/
+.pub-cache/
+
+# Build outputs
+build/
+dist/
+vendor/dist/
+customer/build/
+customer/.dart_tool/
+customer/.flutter-plugins
+customer/.flutter-plugins-dependencies
+
+# Native/generated local files
+*.iml
+.idea/
+.vscode/
+customer/android/.gradle/
+customer/android/local.properties
+customer/ios/Flutter/Generated.xcconfig
+customer/ios/Flutter/flutter_export_environment.sh
+customer/ios/Pods/
+customer/ios/Runner.xcworkspace/
+
+# Logs and runtime output
+*.log
+*.out
+*.err
+backend-public.*.log
+backend.*.log
+vendor_dev.*.log
+customer_*.*.log
+
+# Local maintenance/scratch scripts
+check_admin*.js
+fix_admin_password.js
+reset_admin_passwords.js
+backend/reset_admin_passwords.js
+backend/scratch/
+backend/scratch_*.js
+backend/diagnose_*.js
+backend/dump_*.js
+
+# Databases, backups, generated packages
+*.sql
+db_backups/
+*.apk
+*.aab
+*.zip
+DeliveryApp_Clean_Source/
+DeliveryApp_Clean_Source*/
+
+# User uploads and generated media
+backend/uploads/
+uploads/
+*.png
+*.jpg
+*.jpeg
+*.webp
+!admin/public/**/*.svg
+!vendor/public/**/*.svg
+!customer/assets/**/*.png
+!customer/assets/**/*.jpg
+!customer/assets/**/*.jpeg
+!customer/assets/**/*.webp
+customer/assets/images/AB6AXuD*.png
+
+# Local tools/binaries
+tools/*.exe
+
+# OS files
+Thumbs.db
+.DS_Store

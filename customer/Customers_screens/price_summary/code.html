@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="max-w-md mx-auto min-h-screen flex flex-col bg-background-light dark:bg-background-dark relative">
+<!-- Top Navigation -->
+<header class="flex items-center p-4 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined block">arrow_back</span>
+</button>
+<h1 class="ml-4 text-xl font-bold tracking-tight">Checkout</h1>
+</header>
+<main class="flex-1 overflow-y-auto pb-32">
+<!-- Review Section Header -->
+<div class="px-6 py-4">
+<h2 class="text-2xl font-bold">Review your order</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Please check your details before proceeding</p>
+</div>
+<!-- Delivery Address Card -->
+<div class="mx-4 mb-6 p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-semibold">Delivery Address</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">123 Innovation Drive<br/>Silicon Valley, CA 94043</p>
+</div>
+</div>
+<button class="text-primary text-sm font-medium">Edit</button>
+</div>
+</div>
+<!-- Items Summary -->
+<div class="px-6 mb-4 flex items-center justify-between">
+<h3 class="font-bold text-lg">Order Items</h3>
+<span class="text-xs font-medium bg-slate-200 dark:bg-slate-800 px-2 py-1 rounded">3 Items</span>
+</div>
+<div class="space-y-4 px-4 mb-8">
+<div class="flex gap-4 p-2">
+<div class="w-16 h-16 rounded-lg bg-slate-200 dark:bg-slate-800 flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Black professional studio headphones over-ear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_E1_fpeO9Si5LdrUyIRGGmu7Iuf7jguco6qZzoQ-SDfwRJ-3da1lHUR0FvRjEk1bHPxR1f53hghUHZnRcTwPo4m1M5EhXN8gTW7YCC3Yb5FJogpmFDuU5fbimY2flpDE6KWZXqqJvS1p4ADh1OynG03J6DDzOhr9Gb4lr95ehlHb4CzD4pcu_Msp166AOstnVonFegLHg1Bks7ZS1ANO5PzRxPIZ0dDPMq6qlCEvvk6yA7l7isrAfmoLZbjTO4A_mDW6JAS-4TSw"/>
+</div>
+<div class="flex-1">
+<p class="font-medium">Studio Headphones</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Midnight Black • Wireless</p>
+</div>
+<p class="font-semibold">$299.00</p>
+</div>
+<div class="flex gap-4 p-2">
+<div class="w-16 h-16 rounded-lg bg-slate-200 dark:bg-slate-800 flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Slim mechanical keyboard with RGB lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIhx00iadIGnjmWLj7_-dHgbts58K41MM6cu3xOt6SyI3yBJ0AQAQtyjmXHNs-jqJRGsvOnskJ_gQo3zx1SD30p2c1-TeZddQ-JF8RpJ1gEs4wr3Xqn4GebdXlX-JGN2X3_MAPCtFYkJiSU3Mb41peRDo0P42AIKJxo5e6Ylv3tMJ3FeGjIsfXaPVd3yWEu6affyPv3YPh0Y1c3fM8G9qHGLw7UexpHPifkn2KmV5PeJx1Xr7C7kYkH_2muCnXfzfE9DBBWkVwbSA"/>
+</div>
+<div class="flex-1">
+<p class="font-medium">Compact Keyboard</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Mechanical • RGB</p>
+</div>
+<p class="font-semibold">$145.00</p>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="mx-4 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800">
+<h3 class="font-bold mb-4">Price Details</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-500 dark:text-slate-400">Subtotal</span>
+<span class="font-medium">$444.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-500 dark:text-slate-400">Delivery Fee</span>
+<span class="text-green-500 font-medium">FREE</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-500 dark:text-slate-400">Taxes &amp; Charges</span>
+<span class="font-medium">$35.52</span>
+</div>
+<div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-center">
+<span class="text-base font-bold">Total Amount</span>
+<span class="text-2xl font-bold text-primary">$479.52</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Method Preview -->
+<div class="mt-8 px-6">
+<h3 class="font-bold mb-4">Payment Method</h3>
+<div class="flex items-center gap-4 p-4 rounded-xl border border-primary bg-primary/5">
+<div class="w-12 h-8 bg-slate-800 rounded flex items-center justify-center overflow-hidden">
+<span class="text-[10px] font-bold text-white tracking-widest italic uppercase">VISA</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-sm">•••• •••• •••• 4242</p>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Expires 12/26</p>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action -->
+<footer class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 pb-8">
+<div class="flex items-center justify-between mb-4 px-2">
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Payable Amount</p>
+<p class="text-lg font-bold text-primary">$479.52</p>
+</div>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-background-dark bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">verified_user</span>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-background-dark bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">security</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span>Place Order</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-[10px] text-center text-slate-500 dark:text-slate-400 mt-3 px-4 leading-tight">
+                By tapping "Place Order", you agree to our Terms of Service and Privacy Policy.
+            </p>
+</footer>
+</div>
+</body></html>

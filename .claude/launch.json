@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vendor-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "vendor", "run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "vendor-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "vendor", "run", "preview", "--", "--port", "4173", "--strictPort"],
+      "port": 4173
+    }
+  ]
+}

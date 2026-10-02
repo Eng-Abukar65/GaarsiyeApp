@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Fuel Delivery Dashboard</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Your Location</p>
+<div class="flex items-center gap-1">
+<h2 class="text-sm font-bold leading-tight tracking-tight">Downtown, Dubai</h2>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</div>
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative">
+<label class="flex items-center w-full h-12 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 px-4">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-400" placeholder="Search for services..." type="text"/>
+<span class="material-symbols-outlined text-slate-400 text-xl">tune</span>
+</label>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-4 py-4 overflow-y-auto">
+<!-- Promo Banner -->
+<div class="relative w-full h-40 rounded-xl mb-8 overflow-hidden bg-primary p-6 flex flex-col justify-center text-white">
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+<h3 class="text-xl font-bold mb-1">First Refill?</h3>
+<p class="text-sm opacity-90 mb-4 max-w-[180px]">Get 20% off your first petrol delivery today.</p>
+<button class="w-fit px-4 py-2 bg-white text-primary rounded-lg text-xs font-bold uppercase tracking-wider">Claim Now</button>
+</div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Our Services</h3>
+<button class="text-xs font-semibold text-primary">View All</button>
+</div>
+<!-- Services Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Petrol Delivery -->
+<div class="bg-white dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 p-4 rounded-xl flex flex-col gap-3 shadow-sm">
+<div class="w-full aspect-square rounded-lg bg-primary/5 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up of a fuel pump nozzle dispensing petrol" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnXTZL90jfrzq-SFD5XGr7rJgRJ4bYvxgToWfjVoF4agPsWC44C8b8HuD-VpJK98Tsr2tUeOBZ_0TFkG98ssjwBCVCEiMdsyANI-DoQFrb775aG-EPkijw3UCBC6MWMFbQnkagunK-RsgdM2aMFOfSgL04QkMO9vy9aXN18_mMAKy2d2nm6FvjrmSCMA7dbnFAv27G96ESrzvQRqYfP8vqV_HbZSp_q92iPsHh7mXpVXuaCiDqobVZM6xH9VvWpxtG52QetgKXL1o')"></div>
+</div>
+<div>
+<p class="text-sm font-bold">Petrol Delivery</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">95 &amp; 98 Octane</p>
+</div>
+</div>
+<!-- Diesel Delivery -->
+<div class="bg-white dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 p-4 rounded-xl flex flex-col gap-3 shadow-sm">
+<div class="w-full aspect-square rounded-lg bg-primary/5 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Heavy industrial truck being refueled with diesel" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDE4WWaSJDdnR-BSg3OXSlAxomMzAjsMevqIdheuCjFgsOoL6F74lUo3M-vbTYgZT6OluQGkEiDQ7mfPT0hQ1lQh4Vy86O0Jl5GaPhQlejbrWQ0v2-RLUsDcrrF4SHXY2MTIb18xtVnDl9N8n08qzDpgZzfm67MKchO_B2S76ySItPubaHeGhrrO1x_ZF8hVAraRiGxFF6Zo6sKb0JCNs_dGxg-lhLvF3FNDyii3fkfadX5rzXGlbFnb0fo8qgHMYSBIBV0cE0J-lk')"></div>
+</div>
+<div>
+<p class="text-sm font-bold">Diesel Delivery</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Bulk supply</p>
+</div>
+</div>
+<!-- Gas Cylinder -->
+<div class="bg-white dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 p-4 rounded-xl flex flex-col gap-3 shadow-sm">
+<div class="w-full aspect-square rounded-lg bg-primary/5 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Traditional orange cooking gas cylinders lined up" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfHTeG6JW2OnkD1a88YjmACAQfWTlRJ4ySg25k6QbQxxJz0zqNAvpFrQin6pfQsBquXUZJRyC64JQWoPJPhLoE-DN-HWJjtllQbDuC5oKCJCux3cfE9_Ha7haVayL49aytewMFACDAC-SnZuV65vbCUC6Qmik0cwzHVzqoZ-cDzgNRTsJzZYXYeFb-8f4vjiQsThsVdKJhPPVJW-P3t4t-MaBtPCwzUwGfrJIswPxXahVPZJBL95jokXyrnXGo21Rk3aN2Mr4b354')"></div>
+</div>
+<div>
+<p class="text-sm font-bold">Gas Cylinder</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Instant refill</p>
+</div>
+</div>
+<!-- Spare Parts -->
+<div class="bg-white dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 p-4 rounded-xl flex flex-col gap-3 shadow-sm">
+<div class="w-full aspect-square rounded-lg bg-primary/5 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Mechanical car engine parts and tools in a workshop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClTAY29ZEp-ktUZeMrirhfQFvcEAWr7OG69Y4cXkMnkhfZiiMYyphKipMxJWpYX75cnuwvtR57hUsL5XXW0f02RrQNalq8gC2mVJBk73KQSwiCDTbnPK1xIC4QfcUGH4VKj2xwBVOGKYbHh0kSwEESPPXyi3cSLS22fRKvEbH5dWOFWRCATGccuZDj6MtxdGsPRdbz7eYHxAHJylK3H-JJUwXZKeBBHL9DLV2pSO_lnqGj5qSVA5X6ZA5MHzQGqMJxn059JIldD80')"></div>
+</div>
+<div>
+<p class="text-sm font-bold">Spare Parts</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Quick repair</p>
+</div>
+</div>
+</div>
+<!-- Recent Activity Section -->
+<div class="mt-8 mb-4">
+<h3 class="text-lg font-bold mb-4">Recent Orders</h3>
+<div class="bg-white dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 rounded-xl p-4 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">local_gas_station</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Petrol 95 - 50L</p>
+<p class="text-xs text-slate-500">Delivered on Oct 12, 2023</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">$64.50</p>
+<p class="text-[10px] text-green-500 font-bold uppercase tracking-wider">Completed</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 px-6 pb-6 pt-3 flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">home</span>
+<span class="text-[10px] font-bold text-primary">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 group" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium group-hover:text-primary">Orders</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</div>
+<span class="text-[10px] font-medium group-hover:text-primary">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 group" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium group-hover:text-primary">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile - FuelGo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden max-w-md mx-auto border-x border-slate-200 dark:border-slate-800">
+<!-- Header -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-12 bg-transparent text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+<!-- Profile Section -->
+<div class="flex p-6">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="relative">
+<div class="bg-slate-200 dark:bg-slate-800 bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 border-4 border-primary/20" data-alt="Professional headshot of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBX1dWf_YqNqSwOqVt-L17jDt2U1et3YRdGXTcKOOJZrTGwYYP39zI_RRloDY2Q0dHP6dDV4Oh1CVe60MZMS15mmUG0ImafvqBwHhIO-4Tfa2goGtEWhjHKas1w8Dd92r-zx4IyuCu56fTpEIA151kHjfZ5o7B2Hy2lJf3n9UGYHIx_VFaEZ8WIBfhZA805XJWTFkpSkHhol2lsp6qSth71lSicsz3wKVyTHcsRZ0qOSeynoRygP7fzqLx3-QYAbEk6Brbn-j2cVL8")'>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary p-2 rounded-full border-2 border-background-dark">
+<span class="material-symbols-outlined text-white text-sm">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight text-center">Alex Thompson</p>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal text-center">alex.t@fuelgo.com</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Card -->
+<div class="px-4 mb-6">
+<div class="bg-primary/10 dark:bg-primary/5 rounded-xl p-4 flex justify-around border border-primary/20">
+<div class="text-center">
+<p class="text-primary font-bold text-lg">12</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Total Refills</p>
+</div>
+<div class="w-px bg-primary/20"></div>
+<div class="text-center">
+<p class="text-primary font-bold text-lg">450L</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Fuel Delivered</p>
+</div>
+<div class="w-px bg-primary/20"></div>
+<div class="text-center">
+<p class="text-primary font-bold text-lg">Gold</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Member Status</p>
+</div>
+</div>
+</div>
+<!-- Menu Section -->
+<div class="flex flex-col gap-1 px-4 pb-20">
+<h3 class="text-slate-400 text-xs font-bold uppercase tracking-widest px-2 pb-3 pt-4">Account</h3>
+<!-- Menu Item: Personal Info -->
+<a class="flex items-center gap-4 bg-slate-100/50 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 px-4 min-h-[64px] rounded-xl transition-colors group" href="#">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 size-10">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium flex-1">Personal Info</p>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- Menu Item: Saved Addresses -->
+<a class="flex items-center gap-4 bg-slate-100/50 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 px-4 min-h-[64px] rounded-xl transition-colors group mt-1" href="#">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 size-10">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium flex-1">Saved Addresses</p>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- Menu Item: Payment Methods -->
+<a class="flex items-center gap-4 bg-slate-100/50 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 px-4 min-h-[64px] rounded-xl transition-colors group mt-1" href="#">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 size-10">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium flex-1">Payment Methods</p>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<h3 class="text-slate-400 text-xs font-bold uppercase tracking-widest px-2 pb-3 pt-6">Activity &amp; App</h3>
+<!-- Menu Item: Order History -->
+<a class="flex items-center gap-4 bg-slate-100/50 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 px-4 min-h-[64px] rounded-xl transition-colors group" href="#">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 size-10">
+<span class="material-symbols-outlined">history</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium flex-1">Order History</p>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- Menu Item: Settings -->
+<a class="flex items-center gap-4 bg-slate-100/50 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 px-4 min-h-[64px] rounded-xl transition-colors group mt-1" href="#">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 size-10">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium flex-1">Settings</p>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</a>
+<!-- Logout Button -->
+<button class="flex items-center gap-4 bg-red-500/10 hover:bg-red-500/20 px-4 min-h-[64px] rounded-xl transition-colors group mt-6 mb-10 w-full text-left">
+<div class="text-red-500 flex items-center justify-center rounded-lg bg-red-500/10 size-10">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<p class="text-red-500 text-base font-medium flex-1">Logout</p>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-4 pb-6 pt-3">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-xs font-medium">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-xs font-medium">Orders</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">map</span>
+<p class="text-xs font-medium">Map</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">person</span>
+<p class="text-xs font-medium">Profile</p>
+</a>
+</div>
+</div>
+</body></html>

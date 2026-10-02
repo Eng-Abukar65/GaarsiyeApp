@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VendorPortal - Drivers Management</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#2b3437",
+                        "on-secondary-fixed": "#3d3f42",
+                        "tertiary-container": "#d3e0fd",
+                        "primary": "#216489",
+                        "primary-dim": "#0c587c",
+                        "surface-container": "#eaeff1",
+                        "on-tertiary-container": "#445068",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-secondary-fixed-variant": "#5a5c5e",
+                        "primary-fixed-dim": "#a9daff",
+                        "tertiary-fixed": "#d3e0fd",
+                        "primary-fixed": "#c8e6ff",
+                        "secondary": "#5d5f62",
+                        "on-error-container": "#752121",
+                        "error-container": "#fe8983",
+                        "inverse-primary": "#95d0fa",
+                        "on-tertiary-fixed-variant": "#4e5a72",
+                        "surface-dim": "#d1dce0",
+                        "on-surface-variant": "#586064",
+                        "tertiary": "#535f78",
+                        "on-primary-container": "#0a577b",
+                        "surface-bright": "#f8f9fa",
+                        "on-background": "#2b3437",
+                        "on-primary-fixed": "#004462",
+                        "on-primary-fixed-variant": "#1d6186",
+                        "on-primary": "#f3f8ff",
+                        "surface": "#f8f9fa",
+                        "surface-tint": "#216489",
+                        "surface-container-high": "#e3e9ec",
+                        "on-secondary-container": "#505254",
+                        "primary-container": "#c8e6ff",
+                        "secondary-dim": "#515356",
+                        "on-secondary": "#f8f9fb",
+                        "error": "#9f403d",
+                        "surface-container-low": "#f1f4f6",
+                        "secondary-fixed": "#e2e2e5",
+                        "on-error": "#fff7f6",
+                        "on-tertiary": "#f8f8ff",
+                        "tertiary-fixed-dim": "#c5d2ee",
+                        "error-dim": "#4e0309",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-dim": "#47536b",
+                        "on-tertiary-fixed": "#323e54",
+                        "surface-variant": "#dbe4e7",
+                        "outline-variant": "#abb3b7",
+                        "secondary-container": "#e2e2e5",
+                        "background": "#f8f9fa",
+                        "inverse-on-surface": "#9b9d9e",
+                        "inverse-surface": "#0c0f10",
+                        "secondary-fixed-dim": "#d3d4d7",
+                        "outline": "#737c7f"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #2b3437;
+        }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-50 flex flex-col py-6 px-4 gap-2 font-['Manrope'] antialiased">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-sky-900 leading-tight">VendorPortal</h1>
+<p class="text-xs text-slate-500">Management Suite</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-medium">Purchases</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+<span class="font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-medium">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-sky-700 font-semibold border-r-4 border-sky-700 bg-slate-200/50 rounded-l-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="person_pin">person_pin</span>
+<span class="font-medium">Drivers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="font-medium">Suppliers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="rate_review">rate_review</span>
+<span class="font-medium">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-medium">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl flex justify-between items-center h-16 px-8 border-b border-slate-100/50 shadow-sm font-['Manrope'] text-sm">
+<div class="flex items-center bg-surface-container-low rounded-full px-4 py-1.5 w-96 focus-within:ring-2 focus-within:ring-sky-500/20 transition-all">
+<span class="material-symbols-outlined text-slate-400 mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-400" placeholder="Search drivers by name or ID..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-500 hover:text-sky-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-100">
+<div class="text-right">
+<p class="font-bold text-on-surface">Alex Rivera</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-semibold">Admin</p>
+</div>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="Professional headshot of a smiling manager with short dark hair in a well-lit modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnltx_rInB1Cz306vKb4vtnXQftOdU9S2dVR4cBwcWQPMkfN0TRlHFrgrdkvRr911cwI0a5OE7O9LG-ebSnG-Nx4a37MJu7NMtS6Yy3_lyQkxje1gg6Q2ldzmpUWvspWDmHRkNI0N2pcCEMzO69CoN1IbFSZq8SOv__x6pcx75JoArJAuFv8-MuGsh8iHVQ0PATCeiyY5_o4vFUO1v7kE8dNSw87ditUEfbAOYi3aT29E1N9wSJRnLGAl4m9glEPXXFb9KpMsCbmE"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<section class="p-10 max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight mb-2">Delivery Personnel</h2>
+<p class="text-on-surface-variant max-w-lg leading-relaxed">Oversee your fleet, monitor real-time availability, and optimize dispatch efficiency across all delivery zones.</p>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-primary to-primary-dim text-white rounded-lg font-bold shadow-lg hover:opacity-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>Add New Driver</span>
+</button>
+</div>
+<!-- Dashboard Stats Bento -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="col-span-1 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Active Fleet</p>
+<h3 class="text-3xl font-headline font-bold text-primary">24</h3>
+<div class="mt-4 flex items-center text-xs text-green-600 font-semibold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+<span>+3 this week</span>
+</div>
+</div>
+<div class="col-span-1 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Availability Rate</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">68%</h3>
+<div class="mt-4 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 68%"></div>
+</div>
+</div>
+<div class="col-span-2 bg-primary p-6 rounded-xl border border-outline-variant/10 relative overflow-hidden text-white">
+<div class="relative z-10">
+<p class="text-xs font-bold text-white/70 uppercase tracking-widest mb-4">Fleet Performance</p>
+<h3 class="text-3xl font-headline font-bold">4.8 Average Rating</h3>
+<p class="mt-2 text-sm text-white/80">Top 5% performing in the regional sector</p>
+</div>
+<span class="material-symbols-outlined absolute -right-6 -bottom-6 text-9xl text-white/10" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- Drivers Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Driver Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:bg-surface-bright group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-tighter">Available</span>
+</div>
+<div class="flex items-start gap-4 mb-6">
+<img alt="Marcus Chen" class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Portrait of a friendly young man with short dark hair wearing a casual blue polo shirt against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcciODkgBqtupkIUAIicD5gB3WDZ8abcTkeUK8eo09u63-I4u5RLSUSEQJSa87B4SEvDjrnHm5dt4Yi9Bn6bTTXQLwqvZb-X5Av6U1BnYflQxJJPoFcW8R-8Urkp5QfH6qKS_G8Pm5ymzcIb4BG0mN7jdXPYkkM9g4H3GuLAE3D6JxByOfZ7nhZtvv4v6rz6jg3_w_j9XxECtMW6-WwthnCRjv73HD1hyR8M93ocDQ0H5-lzXyPa6I3YlRNgkg5O2bEXm2ptBp1nk"/>
+<div>
+<h4 class="text-lg font-bold text-on-surface">Marcus Chen</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                                +1 (555) 012-3456
+                            </p>
+<div class="flex items-center mt-2 text-amber-500">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-2 text-xs font-bold text-on-surface">4.9</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Active Orders</p>
+<p class="text-xl font-headline font-bold text-on-surface">0</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Lifetime Del.</p>
+<p class="text-xl font-headline font-bold text-on-surface">1,248</p>
+</div>
+</div>
+</div>
+<!-- Driver Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:bg-surface-bright group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full uppercase tracking-tighter">Busy</span>
+</div>
+<div class="flex items-start gap-4 mb-6">
+<img alt="Elena Rodriguez" class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Professional woman with curly dark hair wearing a white shirt, smiling warmly at the camera, light studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy21QRw776sYdXSNYSvTkJsd-i6BD-6YUyyBqVZy09sypmbVirDIjXewNvGrkV2wSPXQfRKyGywUwQGsd5L6q_ijD4reFuz8k4RgIHogSGA0IKlT9VsGw__4NfFmwTeexH3odhJq6NHyz2vyvobyI6VzBKNey7rA-Eveq-n6xDW7MrHKTlHsIKGm2hCtN5F2Xqk9ruWI_vYARxyBLdlXJJ_u_B73vbypgqggPMHgVSgcs4mV7n2Riy3XcQlL91nuD3-6IkddXlbWg"/>
+<div>
+<h4 class="text-lg font-bold text-on-surface">Elena Rodriguez</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                                +1 (555) 987-6543
+                            </p>
+<div class="flex items-center mt-2 text-amber-500">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star">star</span>
+<span class="ml-2 text-xs font-bold text-on-surface">4.2</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Active Orders</p>
+<p class="text-xl font-headline font-bold text-primary">3</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Lifetime Del.</p>
+<p class="text-xl font-headline font-bold text-on-surface">856</p>
+</div>
+</div>
+</div>
+<!-- Driver Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:bg-surface-bright group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-tighter">Available</span>
+</div>
+<div class="flex items-start gap-4 mb-6">
+<img alt="Samir Gupta" class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Modern portrait of a man with spectacles and a beard, wearing a casual grey t-shirt, bright daylight setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfTRt6CeKWqtsdqKcOqTEXuqpJATs8V40GXGiEEpSGEcslzaaqRCY47VaAcd8fUJR3atLZmVz74gFN6isJnPcpgXUfyzg2TNXd-hB-S48L0Xj2nEvqzeGWXwrXvfHcIJqXgoPpr3xFpvpLTxCiaSs1m7V9WIZnvNSySVgvo8nQ23ybgAnxUBzaHbu2NHImvCpPDtIli3FZMtHLV3TJNBDNr3qMM2nfmah5YwHPJw4KpvYj3W3C_2by-fj_05Au4GbnEv3AgDcIupo"/>
+<div>
+<h4 class="text-lg font-bold text-on-surface">Samir Gupta</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                                +1 (555) 234-5678
+                            </p>
+<div class="flex items-center mt-2 text-amber-500">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-2 text-xs font-bold text-on-surface">5.0</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Active Orders</p>
+<p class="text-xl font-headline font-bold text-on-surface">0</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Lifetime Del.</p>
+<p class="text-xl font-headline font-bold text-on-surface">2,104</p>
+</div>
+</div>
+</div>
+<!-- Driver Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:bg-surface-bright group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full uppercase tracking-tighter">Busy</span>
+</div>
+<div class="flex items-start gap-4 mb-6">
+<img alt="Chloe Smith" class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Young woman with auburn hair and blue eyes, serious but friendly expression, wearing a denim jacket outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs-z68s7Asp-arZUFbZRPPvmPbNGZebDJM0gYSLvFjfg6CMKLlDGjY7JStdwNDp7MhklUf9VciaPSDbYgyX6iu55VB3CrOnOqyT3KymWLECpkDtExAezFUoqjojqqfPxg78I4eoldClDc78K982I0KmV5BAfrrxU7azySFAdB-QUcNh89T7yahDqncX9Y9e3ZCYHRVpMwoG9hjPNrsmBE2gGmE-gC1Hl96A6Fm9uI7DkMiZVbYYgJGanPGO57TGBHfXYOM5NCqRpM"/>
+<div>
+<h4 class="text-lg font-bold text-on-surface">Chloe Smith</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                                +1 (555) 345-6789
+                            </p>
+<div class="flex items-center mt-2 text-amber-500">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star">star</span>
+<span class="ml-2 text-xs font-bold text-on-surface">4.6</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Active Orders</p>
+<p class="text-xl font-headline font-bold text-primary">2</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Lifetime Del.</p>
+<p class="text-xl font-headline font-bold text-on-surface">431</p>
+</div>
+</div>
+</div>
+<!-- Driver Card 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:bg-surface-bright group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-tighter">Available</span>
+</div>
+<div class="flex items-start gap-4 mb-6">
+<img alt="David Thorne" class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Distinguished older man with grey hair and a warm smile, wearing a professional black blazer, soft grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Q_bFeOnZK27arFxJZz1smw_wJ5_g17-IcukNOGh15ltRCd7ngQteiT0ODxTzpzfRWSXl7waxOh4KFLnT41HvHkRiOo9aLnSskPP1FkKR3ttGzRoQHRkYhRU_h_opzr9nu_g7YXb2IDQN_T9-q8iGn0hvj_7MWPVVm4JSnvtfdyUO5LVTTdviKc6jLdMvEpNyVvBa1AS67i50jr0PdIU2wQ8rw37CbKLbYmHv3yWpISttpWPdo4tF8iJX__bqZj13znpzztbRDzw"/>
+<div>
+<h4 class="text-lg font-bold text-on-surface">David Thorne</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                                +1 (555) 456-7890
+                            </p>
+<div class="flex items-center mt-2 text-amber-500">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star">star</span>
+<span class="ml-2 text-xs font-bold text-on-surface">4.1</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Active Orders</p>
+<p class="text-xl font-headline font-bold text-on-surface">0</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Lifetime Del.</p>
+<p class="text-xl font-headline font-bold text-on-surface">3,290</p>
+</div>
+</div>
+</div>
+<!-- Add Driver CTA Card -->
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-surface-container-low hover:border-primary/50 transition-all group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-all mb-4">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</div>
+<h4 class="text-lg font-bold text-on-surface">Onboard New Talent</h4>
+<p class="text-xs text-on-surface-variant mt-1">Expanding your reach? Add another professional to your delivery team.</p>
+</div>
+</div>
+<!-- Detailed Table View (Editorial Style) -->
+<div class="mt-16 bg-surface-container-lowest rounded-xl border border-outline-variant/10 overflow-hidden">
+<div class="px-8 py-6 border-b border-outline-variant/5 flex justify-between items-center">
+<h3 class="text-xl font-headline font-bold text-on-surface">All Personnel Performance</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">Export CSV</button>
+<button class="px-3 py-1 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">Filter</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="text-left bg-surface-container-low">
+<th class="px-8 py-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Driver Details</th>
+<th class="px-8 py-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Status</th>
+<th class="px-8 py-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant text-center">Load</th>
+<th class="px-8 py-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant text-right">Success Rate</th>
+<th class="px-8 py-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-xs">MC</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Marcus Chen</p>
+<p class="text-[10px] text-on-surface-variant font-medium">ID: DRV-9021</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-green-600 uppercase">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Available
+                                    </span>
+</td>
+<td class="px-8 py-4 text-center">
+<span class="text-sm font-headline font-bold text-on-surface">0/5</span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="text-sm font-headline font-bold text-on-surface">99.2%</span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-tertiary font-bold text-xs">ER</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Elena Rodriguez</p>
+<p class="text-[10px] text-on-surface-variant font-medium">ID: DRV-4412</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-tertiary uppercase">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> Busy
+                                    </span>
+</td>
+<td class="px-8 py-4 text-center">
+<span class="text-sm font-headline font-bold text-primary">3/5</span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="text-sm font-headline font-bold text-on-surface">94.8%</span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-bold text-xs">SG</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Samir Gupta</p>
+<p class="text-[10px] text-on-surface-variant font-medium">ID: DRV-7701</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-green-600 uppercase">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Available
+                                    </span>
+</td>
+<td class="px-8 py-4 text-center">
+<span class="text-sm font-headline font-bold text-on-surface">0/5</span>
+</td>
+<td class="px-8 py-4 text-right">
+<span class="text-sm font-headline font-bold text-on-surface">98.5%</span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Footer Space -->
+<footer class="mt-20 px-8 py-6 text-center text-on-surface-variant text-[10px] uppercase tracking-[0.2em] opacity-40">
+            © 2024 VendorPortal Architectural Suite. All fleet data encrypted.
+        </footer>
+</main>
+</body></html>

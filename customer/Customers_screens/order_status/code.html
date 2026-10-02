@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fuel Delivery Order Status</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-lg mx-auto w-full">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Track Delivery</h1>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">more_vert</span>
+</button>
+</div>
+</header>
+<main class="flex-1 max-w-lg mx-auto w-full pb-24">
+<!-- Order Header Info -->
+<div class="px-4 pt-6 pb-4">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Current Order</p>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight">#ORD-772910</h2>
+</div>
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">In Progress</span>
+</div>
+</div>
+<!-- Estimated Arrival Card -->
+<div class="px-4 mb-8">
+<div class="relative overflow-hidden rounded-xl p-6 bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+<div class="relative z-10">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Estimated Arrival</p>
+<p class="text-slate-900 dark:text-slate-100 text-4xl font-black leading-tight mt-1">14:45 <span class="text-lg font-medium opacity-70">PM</span></p>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">local_gas_station</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm">Premium Unleaded • 50 Gallons</p>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">schedule</span>
+</div>
+</div>
+</div>
+<!-- Map Section (Simulated) -->
+<div class="px-4 mb-8">
+<div class="h-48 w-full rounded-xl overflow-hidden relative border border-slate-200 dark:border-slate-800">
+<img class="w-full h-full object-cover grayscale contrast-125 dark:brightness-75" data-alt="Map showing a vehicle moving through city streets" data-location="Austin, Texas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8wVLUPlkYdcsCVrx3-2oFLm8q6V2ZS85bcqq9L5engbPAAlJNMjH2ZlzNU4nJauPtnghcnqIGyFEyAXjc8HQ3jBedbNb0ScJxbDf4YSPMyTlx6Xda_a2IiFs-AgPPzX4dJhGh0HEbXx0nzAEftFkV86BfMfvWNtwy3P_H7HmZZUCBO7igxuKQxZc3oJtkIgMKAJc9ldcQUpIDD3V4zqmA6huyJlQbdc7LaLlC3jZinvXkuFwC7_UUkcZCcKjBvEEUwaJg4sbI0GA"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="relative">
+<div class="absolute inset-0 bg-primary rounded-full animate-ping opacity-50"></div>
+<div class="relative bg-primary p-2 rounded-full shadow-lg shadow-primary/50">
+<span class="material-symbols-outlined text-white text-sm">local_shipping</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Timeline -->
+<div class="px-6 relative">
+<!-- Timeline Line -->
+<div class="absolute left-[39px] top-6 bottom-6 w-0.5 bg-slate-200 dark:bg-slate-800"></div>
+<!-- Stage 1: Done -->
+<div class="relative flex items-start gap-4 mb-10">
+<div class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Order Placed</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Your order has been received and confirmed.</p>
+<p class="text-primary text-xs font-bold mt-1">14:10 PM</p>
+</div>
+</div>
+<!-- Stage 2: Done -->
+<div class="relative flex items-start gap-4 mb-10">
+<div class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Driver Assigned</p>
+<div class="flex items-center gap-2 mt-1">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Profile photo of the delivery driver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS2mjFxmfowA629prbAmR9XDtL4E6f7v2p6cG1nxrsjUGKABrEiVjkLo98-eOl8sb0KuWa04XNtfhDxIUji28kN0sfIz30JHUdEF5KuBPC23vpfoPtEJ6N35daFd8ffzv9_8EMuAKZ4g-wlphIzv0mbj2ZmsLq0cCUZeEstQbJgsv-mK5NAHIgF9cHSODao1DOL9eUj85upy21BiGQKIT6ciScawhycSKx0nVpd8bGHTWS_p8h-2sIynMV-m-uiWavy-anDkGYvzg"/>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Alex M. is handling your delivery.</p>
+</div>
+<p class="text-primary text-xs font-bold mt-1">14:25 PM</p>
+</div>
+</div>
+<!-- Stage 3: Active -->
+<div class="relative flex items-start gap-4 mb-10">
+<!-- Active Pulse -->
+<div class="absolute left-[-4px] top-[-4px] h-10 w-10 bg-primary/20 rounded-full animate-pulse"></div>
+<div class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">En Route</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">The driver is currently on the way to your location.</p>
+<div class="mt-2 flex gap-2">
+<button class="px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary text-xs font-bold rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">call</span> Call Driver
+                        </button>
+</div>
+</div>
+</div>
+<!-- Stage 4: Pending -->
+<div class="relative flex items-start gap-4">
+<div class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 border border-slate-300 dark:border-slate-700">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-400 dark:text-slate-600 text-base font-bold">Delivered</p>
+<p class="text-slate-400 dark:text-slate-700 text-sm">Verification code will be required upon arrival.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="max-w-lg mx-auto flex h-16">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">history</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Orders</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Profile</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Support</span>
+</a>
+</div>
+</nav>
+</body></html>

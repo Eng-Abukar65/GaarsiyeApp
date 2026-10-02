@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#2b3437",
+              "on-secondary-fixed": "#3d3f42",
+              "tertiary-container": "#d3e0fd",
+              "primary": "#216489",
+              "primary-dim": "#0c587c",
+              "surface-container": "#eaeff1",
+              "on-tertiary-container": "#445068",
+              "surface-container-highest": "#dbe4e7",
+              "on-secondary-fixed-variant": "#5a5c5e",
+              "primary-fixed-dim": "#a9daff",
+              "tertiary-fixed": "#d3e0fd",
+              "primary-fixed": "#c8e6ff",
+              "secondary": "#5d5f62",
+              "on-error-container": "#752121",
+              "error-container": "#fe8983",
+              "inverse-primary": "#95d0fa",
+              "on-tertiary-fixed-variant": "#4e5a72",
+              "surface-dim": "#d1dce0",
+              "on-surface-variant": "#586064",
+              "tertiary": "#535f78",
+              "on-primary-container": "#0a577b",
+              "surface-bright": "#f8f9fa",
+              "on-background": "#2b3437",
+              "on-primary-fixed": "#004462",
+              "on-primary-fixed-variant": "#1d6186",
+              "on-primary": "#f3f8ff",
+              "surface": "#f8f9fa",
+              "surface-tint": "#216489",
+              "surface-container-high": "#e3e9ec",
+              "on-secondary-container": "#505254",
+              "primary-container": "#c8e6ff",
+              "secondary-dim": "#515356",
+              "on-secondary": "#f8f9fb",
+              "error": "#9f403d",
+              "surface-container-low": "#f1f4f6",
+              "secondary-fixed": "#e2e2e5",
+              "on-error": "#fff7f6",
+              "on-tertiary": "#f8f8ff",
+              "tertiary-fixed-dim": "#c5d2ee",
+              "error-dim": "#4e0309",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-dim": "#47536b",
+              "on-tertiary-fixed": "#323e54",
+              "surface-variant": "#dbe4e7",
+              "outline-variant": "#abb3b7",
+              "secondary-container": "#e2e2e5",
+              "background": "#f8f9fa",
+              "inverse-on-surface": "#9b9d9e",
+              "inverse-surface": "#0c0f10",
+              "secondary-fixed-dim": "#d3d4d7",
+              "outline": "#737c7f"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-login-gradient {
+            background: radial-gradient(circle at 0% 0%, #f1f4f6 0%, #f8f9fa 100%);
+        }
+    </style>
+</head>
+<body class="h-full font-body text-on-surface bg-login-gradient flex items-center justify-center p-6">
+<div class="w-full max-w-[440px]">
+<!-- Top Visual Accent (Subtle Tonal Layering) -->
+<div class="flex justify-center mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</div>
+<span class="font-headline text-2xl font-extrabold tracking-tight text-on-surface">VendorPortal</span>
+</div>
+</div>
+<!-- Main Login Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 md:p-10 shadow-[0_8px_24px_rgba(43,52,55,0.06)] relative overflow-hidden">
+<!-- Asymmetric Design Element (Glassmorphism Accent) -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<header class="mb-8 relative z-10">
+<h1 class="font-headline text-2xl font-bold text-on-surface mb-2">Welcome back</h1>
+<p class="text-on-surface-variant text-sm">Please enter your credentials to access the management suite.</p>
+</header>
+<form action="#" class="space-y-6 relative z-10" method="POST">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block text-[0.75rem] font-semibold uppercase tracking-wider text-on-surface-variant px-1" for="email">Email Address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3 bg-surface-container-low border border-outline-variant/15 rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all duration-200 sm:text-sm" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex items-center justify-between px-1">
+<label class="block text-[0.75rem] font-semibold uppercase tracking-wider text-on-surface-variant" for="password">Password</label>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-11 pr-11 py-3 bg-surface-container-low border border-outline-variant/15 rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all duration-200 sm:text-sm" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember & Forgot -->
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20 bg-surface-container-low" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block text-sm text-on-surface-variant font-medium" for="remember-me">Remember me</label>
+</div>
+<div class="text-sm">
+<a class="font-medium text-primary hover:text-primary-dim transition-colors" href="#">Forgot password?</a>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full flex justify-center py-3.5 px-4 rounded-lg shadow-sm text-sm font-semibold text-on-primary bg-gradient-to-br from-primary to-primary-dim hover:opacity-90 active:opacity-80 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
+                        Sign in
+                    </button>
+</div>
+</form>
+<!-- Footer Section -->
+<footer class="mt-10 pt-8 border-t border-outline-variant/10 text-center relative z-10">
+<p class="text-sm text-on-surface-variant">
+                    Don't have an account? 
+                    <a class="font-semibold text-primary hover:text-primary-dim transition-colors ml-1" href="#">Request Access</a>
+</p>
+</footer>
+</div>
+<!-- Bottom Policy Links -->
+<div class="mt-8 flex justify-center gap-6 text-[0.7rem] uppercase tracking-widest text-on-surface-variant/60 font-medium">
+<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-on-surface transition-colors" href="#">Support</a>
+</div>
+</div>
+<!-- Background Decorative Image (Subtle) -->
+<div class="fixed inset-0 -z-10 opacity-40 pointer-events-none">
+<img alt="" class="w-full h-full object-cover mix-blend-multiply filter grayscale" data-alt="abstract architectural geometry with clean lines and soft grey shadows on a minimalist white background high key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzsCHmMe_6mjiJTKrsqFgiJiw-f-NWst_cyX12jvPX6zNLxbQNFvib7OQghj_SiPqnCbYxlxIRgrywLPi9u5ysrTwUXUPvdkZZBTkEFD6DrTTKzwLjQlo7zivet62jiKCOPMcP2y5yVSdehYniOuXgaNDin-jFy0IzRVWn6iVe7B5JmwLbT1KSXHQM69oD_jthkWeZ8dBUXDTwN3jRrHK9vc3Qa35ITpA4OiuOPq1pkbRGVVFqqExVCrWe91fmdB-UTH5A-OKp5sI"/>
+</div>
+</body></html>

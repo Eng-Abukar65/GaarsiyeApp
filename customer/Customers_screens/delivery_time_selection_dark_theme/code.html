@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Select Delivery Time</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col bg-background-dark overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full dark:hover:bg-white/10 cursor-pointer bg-slate-800/80 text-slate-100 backdrop-blur-md">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Delivery Schedule</h2>
+</div>
+<!-- Progress Bar (Subtle) -->
+<div class="px-4 py-2">
+<div class="h-1 w-full bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-primary w-2/3"></div></div>
+</div>
+<!-- Date Selection -->
+<div class="px-4 pt-6 pb-2">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+                Select Date
+            </h3>
+</div>
+<div class="flex px-4 py-3">
+<div class="flex h-12 flex-1 items-center justify-center rounded-xl bg-slate-800/50 p-1 border border-slate-700/50">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-slate-400 text-sm font-semibold transition-all">
+<span class="truncate">Today</span>
+<input checked="" class="invisible w-0" name="date-selector" type="radio" value="Today"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-slate-400 text-sm font-semibold transition-all">
+<span class="truncate">Tomorrow</span>
+<input class="invisible w-0" name="date-selector" type="radio" value="Tomorrow"/>
+</label>
+</div>
+</div>
+<!-- Time Slot Selection -->
+<div class="px-4 pt-6 pb-2">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                Select Time Slot
+            </h3>
+</div>
+<div class="flex flex-col gap-3 p-4">
+<!-- Express Option -->
+<label class="group flex items-center gap-4 rounded-xl border-2 border-slate-800 bg-slate-800/40 p-4 flex-row-reverse cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5 transition-all">
+<input checked="" class="h-5 w-5 border-2 border-slate-700 bg-transparent text-primary focus:ring-primary focus:ring-offset-0 checked:bg-primary" name="time-slot" type="radio"/>
+<div class="flex grow flex-col">
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Express</p>
+<span class="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider">Fastest</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Within 60 mins • High Demand</p>
+</div>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+</label>
+<!-- Morning Option -->
+<label class="group flex items-center gap-4 rounded-xl border-2 border-slate-800 bg-slate-800/40 p-4 flex-row-reverse cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5 transition-all">
+<input class="h-5 w-5 border-2 border-slate-700 bg-transparent text-primary focus:ring-primary focus:ring-offset-0 checked:bg-primary" name="time-slot" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Morning</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">8:00 AM - 12:00 PM</p>
+</div>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 group-has-[:checked]:text-primary">
+<span class="material-symbols-outlined">light_mode</span>
+</div>
+</label>
+<!-- Afternoon Option -->
+<label class="group flex items-center gap-4 rounded-xl border-2 border-slate-800 bg-slate-800/40 p-4 flex-row-reverse cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5 transition-all">
+<input class="h-5 w-5 border-2 border-slate-700 bg-transparent text-primary focus:ring-primary focus:ring-offset-0 checked:bg-primary" name="time-slot" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Afternoon</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">1:00 PM - 5:00 PM</p>
+</div>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 group-has-[:checked]:text-primary">
+<span class="material-symbols-outlined">wb_sunny</span>
+</div>
+</label>
+<!-- Evening Option -->
+<label class="group flex items-center gap-4 rounded-xl border-2 border-slate-800 bg-slate-800/40 p-4 flex-row-reverse cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5 transition-all">
+<input class="h-5 w-5 border-2 border-slate-700 bg-transparent text-primary focus:ring-primary focus:ring-offset-0 checked:bg-primary" name="time-slot" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Evening</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">6:00 PM - 10:00 PM</p>
+</div>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 group-has-[:checked]:text-primary">
+<span class="material-symbols-outlined">bedtime</span>
+</div>
+</label>
+</div>
+<!-- Delivery Summary Mini Card -->
+<div class="mx-4 mt-4 p-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">local_gas_station</span>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Order Summary</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">20 Gallons Fuel • Synthetic Oil Filter</p>
+</div>
+<div class="ml-auto text-right">
+<p class="text-sm font-bold text-primary">$84.50</p>
+</div>
+</div>
+</div>
+<!-- Footer / Action Area -->
+<div class="mt-auto p-4 pb-10">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-primary/10">
+<span>Continue to Payment</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-4">
+                Delivery fees may vary based on selected time slot
+            </p>
+</div>
+<div class="h-5 bg-background-light dark:bg-background-dark"></div>
+</div>
+</body></html>

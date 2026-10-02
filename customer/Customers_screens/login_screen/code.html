@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - FuelGo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Area -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Login</h2>
+</div>
+<!-- Header Content -->
+<div class="px-6 pt-8 pb-4">
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-[32px] font-bold leading-tight">Welcome Back</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal mt-2">Log in to your fuel delivery account</p>
+</div>
+<!-- Login Form -->
+<div class="flex flex-col gap-4 px-6 py-4 max-w-md mx-auto w-full">
+<!-- Email/Phone Field -->
+<div class="flex flex-col w-full">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal pb-2">Email or Phone
+<input class="form-input flex w-full rounded-lg text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary focus:ring-1 focus:ring-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 px-4 text-base font-normal outline-none transition-all" placeholder="Enter your email or phone number" type="text" value=""/>
+</label></div>
+<!-- Password Field -->
+<div class="flex flex-col w-full mt-2">
+<div class="flex justify-between items-center pb-2">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Password</label>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">Forgot Password?</a>
+</div>
+<div class="relative flex items-center">
+<input class="form-input flex w-full rounded-lg text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary focus:ring-1 focus:ring-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 px-4 pr-12 text-base font-normal outline-none transition-all" placeholder="Enter your password" type="password" value=""/>
+<div class="absolute right-4 text-slate-400 dark:text-slate-500 flex items-center cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">visibility</span>
+</div>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="mt-4 w-full h-14 bg-primary text-white font-bold rounded-lg hover:brightness-110 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+                Log In
+            </button>
+<!-- Divider -->
+<div class="flex items-center gap-4 my-6">
+<div class="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+<span class="text-slate-400 text-sm font-medium">Or continue with</span>
+<div class="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+</div>
+<!-- Social Logins -->
+<div class="flex flex-col gap-3">
+<button class="flex items-center justify-center gap-3 w-full h-14 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<div class="w-6 h-6 flex items-center justify-center overflow-hidden">
+<img alt="" class="w-5 h-5 object-contain" data-alt="Google logo in colorful design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtL3R36ksNabITD8md258IKbDGTMihgV4pwd5dgiiDjn5iKztKGmoGGXPAD8Tp8DqPh8x9tnFl0LhYfk6RYwtEJNDA0uHKOx4X_l9WhlmVn_o4O5KJXOZRTHEyEf7g3cfL7T0E9gF_Ene4tCRQj7oUtr6PRFdvc_b947Gj30ly-ObVEe7qPLI6FLUUhxqwB2uFHM_GstSuEM6z5_pRKtdXDMroZ0-DDLlGmSTa-mcQtzKF28ziFIwJyNVMhrdDSt0YHwTQsuAOZ18"/>
+</div>
+<span class="text-slate-900 dark:text-white font-medium">Continue with Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 w-full h-14 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white text-[24px]">ios</span>
+<span class="text-slate-900 dark:text-white font-medium">Continue with Apple</span>
+</button>
+</div>
+<!-- Sign Up Prompt -->
+<p class="text-center text-slate-600 dark:text-slate-400 text-sm mt-8">
+                Don't have an account? 
+                <a class="text-primary font-bold hover:underline" href="#">Create Account</a>
+</p>
+</div>
+<!-- Bottom Graphic/Pattern -->
+<div class="mt-auto p-6 opacity-30">
+<div class="h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full w-2/3 mx-auto"></div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications - Fuel Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 px-4 py-4 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">Notifications</h1>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full text-primary hover:bg-primary/10 transition-colors" title="Mark all as read">
+<span class="material-symbols-outlined">done_all</span>
+</button>
+</header>
+<!-- Content -->
+<main class="flex-1 pb-24">
+<!-- Category: Today -->
+<section class="mt-4">
+<div class="px-4 py-2">
+<h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Today</h2>
+</div>
+<!-- Notification Item 1 -->
+<div class="group relative flex cursor-pointer items-start gap-4 px-4 py-4 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[28px]">local_gas_station</span>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex items-center justify-between gap-2">
+<h3 class="font-semibold leading-none">Fuel Delivery Confirmed</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400">10:30 AM</span>
+</div>
+<p class="text-sm leading-snug text-slate-600 dark:text-slate-400">Your fuel order #1234 is on its way to your location. Expected arrival in 15 mins.</p>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 size-2 rounded-full bg-primary ring-4 ring-primary/20"></div>
+</div>
+<!-- Notification Item 2 -->
+<div class="group flex cursor-pointer items-start gap-4 px-4 py-4 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[28px]">notifications_active</span>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex items-center justify-between gap-2">
+<h3 class="font-semibold leading-none">Flash Sale Alert!</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400">09:15 AM</span>
+</div>
+<p class="text-sm leading-snug text-slate-600 dark:text-slate-400">Get 10% off on your next tank refill using code <span class="font-mono font-bold text-primary">FUEL10</span>. Valid for 24h.</p>
+</div>
+</div>
+</section>
+<!-- Category: Earlier -->
+<section class="mt-6">
+<div class="px-4 py-2 border-t border-slate-200 dark:border-slate-800 mt-2">
+<h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 pt-4">Earlier</h2>
+</div>
+<!-- Notification Item 3 -->
+<div class="group flex cursor-pointer items-start gap-4 px-4 py-4 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50 opacity-80">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-500">
+<span class="material-symbols-outlined text-[28px]">check_circle</span>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex items-center justify-between gap-2">
+<h3 class="font-semibold leading-none">Order Completed</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400">Yesterday</span>
+</div>
+<p class="text-sm leading-snug text-slate-600 dark:text-slate-400">Order #1230 has been successfully delivered. Rate your experience!</p>
+</div>
+</div>
+<!-- Notification Item 4 -->
+<div class="group flex cursor-pointer items-start gap-4 px-4 py-4 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50 opacity-80">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-500">
+<span class="material-symbols-outlined text-[28px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex items-center justify-between gap-2">
+<h3 class="font-semibold leading-none">Refund Processed</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400">Oct 24</span>
+</div>
+<p class="text-sm leading-snug text-slate-600 dark:text-slate-400">A refund of $5.40 has been processed for your last order adjustment.</p>
+</div>
+</div>
+<!-- Notification Item 5 -->
+<div class="group flex cursor-pointer items-start gap-4 px-4 py-4 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800/50 opacity-80">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-500">
+<span class="material-symbols-outlined text-[28px]">security</span>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex items-center justify-between gap-2">
+<h3 class="font-semibold leading-none">Password Changed</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400">Oct 22</span>
+</div>
+<p class="text-sm leading-snug text-slate-600 dark:text-slate-400">Your account password was successfully updated. If this wasn't you, contact support.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-20 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark/95 backdrop-blur-lg px-2 pb-6 pt-2">
+<div class="mx-auto flex max-w-md items-center justify-around">
+<a class="flex flex-col items-center gap-1 px-4 py-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 px-4 py-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Orders</span>
+</a>
+<a class="flex flex-col items-center gap-1 px-4 py-1 text-primary relative" href="#">
+<span class="material-symbols-outlined fill-[1]">notifications</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Alerts</span>
+<div class="absolute top-1 right-5 size-1.5 rounded-full bg-primary"></div>
+</a>
+<a class="flex flex-col items-center gap-1 px-4 py-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

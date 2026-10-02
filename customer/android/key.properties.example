@@ -1,0 +1,30 @@
+# Copy to android/key.properties and fill in your real values.
+#
+# android/key.properties and *.jks / *.keystore are git-ignored — never commit
+# either of them, and never paste these passwords into an issue, chat or README.
+# Losing the keystore means you can never publish an update to the same Play
+# listing again, so back it up somewhere durable and private.
+#
+# ── Generate the keystore (run once, from the `customer` directory) ───────────
+#
+#   keytool -genkey -v -keystore android/app/gaarsis-release.jks \
+#     -keyalg RSA -keysize 2048 -validity 10000 -alias gaarsis
+#
+# keytool ships with the JDK. If it is not on PATH, use the JDK bundled with
+# Android Studio:
+#   & "C:\Program Files\Android\Android Studio\jbr\bin\keytool.exe" ...
+#
+# It will prompt for a store password, a key password and your organisation
+# details. Put the same two passwords below.
+
+# Password protecting the keystore file itself.
+storePassword=CHANGE_ME_STORE_PASSWORD
+
+# Password protecting the key inside the keystore.
+keyPassword=CHANGE_ME_KEY_PASSWORD
+
+# The -alias value used with keytool above.
+keyAlias=gaarsis
+
+# Path to the .jks file, relative to the `android/` directory.
+storeFile=app/gaarsis-release.jks

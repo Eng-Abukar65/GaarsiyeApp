@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">AutoParts Express</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="relative flex h-10 w-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">3</span>
+</button>
+</div>
+</header>
+<main class="flex-1 pb-24">
+<div class="px-4 py-6">
+<label class="flex flex-col w-full group">
+<div class="flex w-full items-stretch rounded-xl h-14 bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 focus-within:border-primary transition-all shadow-sm">
+<div class="text-slate-400 dark:text-slate-500 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-500 px-4 text-base font-medium" placeholder="Search by part name, brand or VIN..." value=""/>
+<div class="flex items-center pr-4">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 cursor-pointer hover:text-primary transition-colors">tune</span>
+</div>
+</div>
+</label>
+</div>
+<section class="px-4 mb-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">Popular Categories</h2>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/5] bg-slate-800">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Close up of golden engine oil pouring into container" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqJnorBOzT_8Hq-DtepYTxPS2rnDK9GAv8POWCKz_sSdx-rVGYR5GW2AIW1swKIM12vraUi9T3xkPrpw8JoyfP_Ciq_ZBnf-OwhPQJ6wClRJlX6nrgUW6eEI5YhKQma82C0BGEYtLYhXaQfi8u5Q86PKKEjPZlXB6mtLr0FXddO4DOihuAS-IpXaZaT27JooQVfZg1ZBZmtBL4uuwMmikHVKVM_fc3bJnnZZrSxNUMIqG426bo3F6tNvTbv5v_TPNQcTqaUPCQkJQ');"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-white text-base font-bold leading-tight">Oil &amp; Filters</p>
+<p class="text-white/60 text-xs mt-1">1,240+ Items</p>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/5] bg-slate-800">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern automotive battery with terminal connectors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXT5fhUcRpxkzdq_Izn-SihkHOpP6OS_ixKv53hUx8SUiF9Fqc8kve2V548r_Dypl39oGSy4LWh2NkQvZehGYILRri2vHkUI9ONTmhBiASr5bYYwWU4NnRUiYemAl8IZ9yR89zDjZAZDjqUFaqaX313P0QcVTZXvg4-Swym78LkVKQWJhOolBd3aAjiWJ6tK_DCP98XjHClklOFCKT7wi2k3_ehDIxEEQv0-nOxDZqRfB4MPZNxkfkx5dz0NfCZCQdI3rgtGCSuWk');"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-white text-base font-bold leading-tight">Batteries</p>
+<p class="text-white/60 text-xs mt-1">450+ Items</p>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/5] bg-slate-800">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Close up of a metallic car brake disc" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUjtCuYe4DOhOcL4sHfb3bzU37TG54tNuaI8FQ2Cu_9wvXsomT8XcbFHJWWsQt_l-cR95-KlN5FPI0mXj7I9JrAhk-5g6-fXO7MDEj_QxRgL583rPbI90MDZleOSLF27Hpolsah3pPFNwpIa8TNTzvq5aqkg0bmEnw5Nj9OZf6pb6rYDwDlFR46O1lOnWH7lkDgv2pfmSqEfNvOqYBBfTLvNnvB6kaRLs598paYFEaiRlM6_yrT_jr14335AIkNOn73TxR1hpVnoI');"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-white text-base font-bold leading-tight">Brakes</p>
+<p class="text-white/60 text-xs mt-1">890+ Items</p>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/5] bg-slate-800">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="New black car tires stacked in a row" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCo2YGOCxxJge8nCBsbOyNwqxelpdvy2thG5igoQj37PlAG0fIowdPDtIz2RO6GPu9lJVHhD_BV5zr9_iruiX6I-RrYTHj1scYafcDQSzlS072hwIqkzKja-0LLAe7gZZvONqh4QDcv3bNHJnOeyaXqB8PXN3e1YmuP3w70CImRydUWhiemJXa57WYoptBFYiEp6FhFWpEOMiBPtrxgrjM1p_URP48Hxyy8fJQGtTJ1jw1i9JDeIX5wDZWIFKPBZl4kUcRLWXRdWVI');"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-white text-base font-bold leading-tight">Tires</p>
+<p class="text-white/60 text-xs mt-1">2,100+ Items</p>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/5] bg-slate-800 col-span-2 sm:col-span-1">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Assorted car interior accessories and lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaewP4BMnjISUUg6xHBbssPtQ3GumG3XhUlNyQ3EdzKaQOf2X4eL8oTFkM5MgLpxREew6y1wN_QHEZc-DX81EPGY_dI7FOTeFrAXYV3F3FMkDg4h7b2jHbVQkKr1A8LhoZHXd2VbyQrbexyWXToMd8q3rpTNBh4dHLoMKd8AvBzb5HlA9xPFKIIH12nKjiQi3KqxMWsBco52JW1pM-jY1pQpppY2QnGwDvf1NuslEf_MYsI6pImQtqlSNwmoKBUnosOkbXd-IPmwQ');"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-white text-base font-bold leading-tight">Accessories</p>
+<p class="text-white/60 text-xs mt-1">3,400+ Items</p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">Recent Deals</h2>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+<div class="flex-none w-64 bg-slate-100 dark:bg-slate-800/40 rounded-xl p-3 border border-slate-200 dark:border-slate-700/50">
+<div class="relative h-40 w-full rounded-lg overflow-hidden mb-3 bg-white dark:bg-slate-900">
+<div class="absolute top-2 right-2 z-10 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-full">-20%</div>
+<img alt="Synthetic engine oil bottle" class="h-full w-full object-contain p-4" data-alt="Bottle of premium synthetic engine oil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu3oCSrS5Y0b7A2X7BV-R8nlEeaRNTLTkiv3LErs3_CPub_yISSQWAfvaWfASzQ3Yd_LytNM3YUB9c89KrGgdx9yqGZIJ0j8pDkNqSFp_mI8Z6F6lkUQhoEE18SpAgl4ighDcZ_cpxAQoH7Pytp3DeT0tDximoULwnVbgVggZlKmVhDFRU7Ivf5kbOqNTOSZSBGO3JCaBMcqu4grp23Comxcs63VHFtV_Yc7KiOQffY6b0F2IP-E17G6Qar4LopadnNb3bD0rtgw8"/>
+</div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 line-clamp-1">Castrol EDGE 5W-30 Full Synthetic</h3>
+<div class="flex items-center justify-between mt-2">
+<div>
+<span class="text-primary font-bold text-lg">$34.99</span>
+<span class="text-slate-500 line-through text-xs ml-1">$42.99</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="flex-none w-64 bg-slate-100 dark:bg-slate-800/40 rounded-xl p-3 border border-slate-200 dark:border-slate-700/50">
+<div class="relative h-40 w-full rounded-lg overflow-hidden mb-3 bg-white dark:bg-slate-900">
+<img alt="Bosch spark plugs set" class="h-full w-full object-contain p-4" data-alt="Set of four high performance spark plugs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-VMVQlib8sYDtoAbcbVDwqSGF9B01yUCENiwtEg6rp_wbh0wrn_rdqpVopQYXcw6VMzgQ0zsQZ3rxxO7smZ8YFf7n_25IdmIRADA_1R4ENP4pD-Arv4QwQh7HEH8_5cdb3VckZA1bmaSQsu9qTF6i0XuJyNQKSiSOK23o4xTjbobF1TgRpgFBrPBDSjmF3uujo57bSb8B0e5MIU0bCf739-8QENdh_QoMjk4dLQGp7-CiabBrw_aNC5ldTEAqTAOybpJY1btGhkI"/>
+</div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 line-clamp-1">Bosch Double Iridium Spark Plug</h3>
+<div class="flex items-center justify-between mt-2">
+<div>
+<span class="text-primary font-bold text-lg">$12.50</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pb-6 pt-3 safe-area-bottom">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined active-icon">home</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Catalog</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Orders</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Profile</p>
+</a>
+</nav>
+</div>
+</body></html>

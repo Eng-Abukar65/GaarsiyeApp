@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vendor Portal - Offers &amp; Discounts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#2b3437",
+                        "on-secondary-fixed": "#3d3f42",
+                        "tertiary-container": "#d3e0fd",
+                        "primary": "#216489",
+                        "primary-dim": "#0c587c",
+                        "surface-container": "#eaeff1",
+                        "on-tertiary-container": "#445068",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-secondary-fixed-variant": "#5a5c5e",
+                        "primary-fixed-dim": "#a9daff",
+                        "tertiary-fixed": "#d3e0fd",
+                        "primary-fixed": "#c8e6ff",
+                        "secondary": "#5d5f62",
+                        "on-error-container": "#752121",
+                        "error-container": "#fe8983",
+                        "inverse-primary": "#95d0fa",
+                        "on-tertiary-fixed-variant": "#4e5a72",
+                        "surface-dim": "#d1dce0",
+                        "on-surface-variant": "#586064",
+                        "tertiary": "#535f78",
+                        "on-primary-container": "#0a577b",
+                        "surface-bright": "#f8f9fa",
+                        "on-background": "#2b3437",
+                        "on-primary-fixed": "#004462",
+                        "on-primary-fixed-variant": "#1d6186",
+                        "on-primary": "#f3f8ff",
+                        "surface": "#f8f9fa",
+                        "surface-tint": "#216489",
+                        "surface-container-high": "#e3e9ec",
+                        "on-secondary-container": "#505254",
+                        "primary-container": "#c8e6ff",
+                        "secondary-dim": "#515356",
+                        "on-secondary": "#f8f9fb",
+                        "error": "#9f403d",
+                        "surface-container-low": "#f1f4f6",
+                        "secondary-fixed": "#e2e2e5",
+                        "on-error": "#fff7f6",
+                        "on-tertiary": "#f8f8ff",
+                        "tertiary-fixed-dim": "#c5d2ee",
+                        "error-dim": "#4e0309",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-dim": "#47536b",
+                        "on-tertiary-fixed": "#323e54",
+                        "surface-variant": "#dbe4e7",
+                        "outline-variant": "#abb3b7",
+                        "secondary-container": "#e2e2e5",
+                        "background": "#f8f9fa",
+                        "inverse-on-surface": "#9b9d9e",
+                        "inverse-surface": "#0c0f10",
+                        "secondary-fixed-dim": "#d3d4d7",
+                        "outline": "#737c7f"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-50 dark:bg-slate-900 flex flex-col py-6 px-4 gap-2 z-50">
+<div class="mb-8 px-4">
+<h1 class="text-xl font-bold text-sky-900 dark:text-sky-100">VendorPortal</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest font-semibold mt-1">Management Suite</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Purchases</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">package_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-sm font-medium">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">person_pin</span>
+<span class="text-sm font-medium">Drivers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">handshake</span>
+<span class="text-sm font-medium">Suppliers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+<span class="text-sm font-medium">Reviews</span>
+</a>
+<!-- Active State: Offers -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sky-700 dark:text-sky-400 font-semibold border-r-4 border-sky-700 dark:border-sky-400 bg-slate-200/50" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="text-sm font-medium">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:bg-slate-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Component -->
+<header class="sticky top-0 z-40 flex justify-between items-center h-16 px-8 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-100/50 dark:border-slate-800/50">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-sky-500/20 rounded-lg">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-0 placeholder:text-slate-400" placeholder="Search promotions, offers, or codes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 ml-8">
+<button class="relative text-slate-500 hover:text-sky-600 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-primary ring-2 ring-white"></span>
+</button>
+<div class="flex items-center gap-3 border-l border-slate-100 pl-6">
+<span class="text-sm font-medium text-on-surface">Admin Profile</span>
+<img alt="User Avatar" class="h-8 w-8 rounded-full object-cover ring-2 ring-surface-container-high" data-alt="professional portrait of a confident male executive in a neutral studio background with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeXY_3tckEaRR0IK9QQdOG9zsji5zJkhE_LZzQnh6--oDbtdVqsruzLsLOe69qfCyO693oYN1e5qxwkpSy3-smENqQAY2EWmuRddIY2LwRebcMfSzp7hC5UMMfAEqPiXkXOe7DIgNTmnmEMZ-qZUyRtZ0xKuN-MOXbpzipbQpqDvHQlnBQJacR_c0O3DJk2X7iihQ6D9WJ-c2GN5lt9-_MMy9usrnhw7mf4ysPdBaQL3pllOMdRfk-tMUxKvOUQRws8xybpe7AeYU"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-10 space-y-10">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-[2.75rem] font-extrabold text-on-surface tracking-tight leading-tight">Offers &amp; Discounts</h2>
+<p class="text-on-surface-variant text-lg mt-2">Manage your promotional campaigns and active vendor discounts.</p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+                    Create New Offer
+                </button>
+</div>
+<!-- Bento Grid: Featured Offers -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Highlight Card -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group">
+<div class="relative z-10">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold tracking-widest uppercase rounded-full mb-4">Top Performer</span>
+<h3 class="text-2xl font-bold text-on-surface mb-2">Summer Fuel Surge</h3>
+<p class="text-on-surface-variant max-w-sm">Active 15% discount on all Diesel and Premium gas purchases for fleet partners.</p>
+</div>
+<div class="mt-8 flex items-end justify-between relative z-10">
+<div class="space-y-1">
+<p class="text-xs text-on-surface-variant uppercase font-semibold">Total Redeemed</p>
+<p class="text-3xl font-extrabold text-primary">1,284 <span class="text-sm font-normal text-on-surface-variant">Uses</span></p>
+</div>
+<div class="flex -space-x-2">
+<img alt="user" class="h-8 w-8 rounded-full ring-2 ring-white" data-alt="close-up portrait of a woman with vibrant lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPahA559uRM3O-cd1EeiRdGBfCXglUXabfI4BvqDOo5l6ke5x_IWXHe0ETcD9PVPJTnL2aG515fSTZsfE3IL_92JqH-JYHSEf6YCDVsQKmUCMXjFpW9uDv8Of5wd1eB49WM9mnAlUEADBd2QrQ2KJ3_DSirET38ByA7XrQ5tZaxUfLa6L1nLB6y1s8Pr8M-RCSfRCHOoaRAaPpWqVBfYVhqGd6uZOhvQBOSfe84GxiNjPl7_xroEQ_AcxMG051esvhT6XHw6nuvZ4"/>
+<img alt="user" class="h-8 w-8 rounded-full ring-2 ring-white" data-alt="professional headshot of a smiling man in a business suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpWr2jeXDXU_naPWgpV1KmFVqz6eztVGvF5sJTEELpeHAjSbkXIRQqQ4zoFyu9leLRIoJ8EVGmV4knhVXKee2jyr7dH7dvqSh1ffytrCAx8HNYzHxUuXZfpQMsOKlzQtnzpKm3yiIbaqChGp828Yvjy2kFACz7ntiHBlV9XnTtfTCHF3FNflJ-N9d37QUEMZkso1aUku_aI8F-8B3o86283_KEQ3HfJcNJeGnNu1Xl1c9afCyqJVfZEmlJqRSEMw1KFxoY421ZguE"/>
+<img alt="user" class="h-8 w-8 rounded-full ring-2 ring-white" data-alt="headshot of a man with casual beard and warm studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf3LQP2GZWXk-KaXOHl_7K6Z7VFj_H_d9ds3Zmi-6gqGsX1NGxyQ_RQuW303jm4wRVC_59p_f2gKbN0gBYp8dLXj0XuCL9w-eMoc-F6NWMFmYWgS5ZKtwljCbWWLfgsJnWOUKdi1BkKfrr_aA9-3IU5RWyWp_ZJSWdw-JASAf96Ob9IT1mxICD7oWEDy9WuQYirxyzZPKQ-BxMCaf5DaElR-IeshQXu5WoqMO4J4AJUC3SKnYaLA6MXhavJ_Qk9a9zAtGPVoLwwSs"/>
+<div class="h-8 w-8 rounded-full ring-2 ring-white bg-surface-container-high flex items-center justify-center text-[10px] font-bold">+1.2k</div>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl group-hover:bg-primary-container/20 transition-all duration-700"></div>
+</div>
+<!-- Secondary Highlight -->
+<div class="bg-primary text-on-primary rounded-xl p-8 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl mb-4">auto_awesome</span>
+<h3 class="text-xl font-bold">Smart Pricing</h3>
+<p class="text-primary-fixed-dim text-sm mt-2">AI suggests increasing discount on Spare Parts to match market trends.</p>
+</div>
+<button class="w-full mt-6 py-3 bg-white/10 hover:bg-white/20 transition-colors rounded-lg text-sm font-semibold border border-white/20">
+                        View Recommendations
+                    </button>
+</div>
+</div>
+<!-- List of Offers Table -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="px-8 py-6 flex justify-between items-center bg-surface-container-low/30">
+<h3 class="text-lg font-bold text-on-surface">Active Promotions</h3>
+<div class="flex gap-4">
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/15 text-sm font-medium rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                            Filter
+                        </button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/15 text-sm font-medium rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/10">
+<th class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant border-b border-outline-variant/15">Offer Name</th>
+<th class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant border-b border-outline-variant/15 text-center">Discount %</th>
+<th class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant border-b border-outline-variant/15">Applies To</th>
+<th class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant border-b border-outline-variant/15">Duration</th>
+<th class="px-8 py-4 text-[10px] uppercase font-bold tracking-widest text-on-surface-variant border-b border-outline-variant/15">Status</th>
+<th class="px-8 py-4 border-b border-outline-variant/15"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">local_gas_station</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Summer Fuel Surge</p>
+<p class="text-xs text-on-surface-variant">FLT-2024-SUMMER</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<span class="text-lg font-bold text-primary">15%</span>
+</td>
+<td class="px-8 py-6">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-[10px] font-bold rounded uppercase tracking-wider text-on-surface-variant">Fuel</span>
+<span class="px-2 py-1 bg-surface-container-high text-[10px] font-bold rounded uppercase tracking-wider text-on-surface-variant">Gas</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="text-sm">
+<p class="text-on-surface font-medium">Jun 01 - Aug 31</p>
+<p class="text-[10px] text-on-surface-variant uppercase">3 months total</p>
+</div>
+</td>
+<td class="px-8 py-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-bold tracking-widest uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-dim"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-8 py-6 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Bulk Parts Discount</p>
+<p class="text-xs text-on-surface-variant">PRT-BULK-09</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<span class="text-lg font-bold text-primary">25%</span>
+</td>
+<td class="px-8 py-6">
+<span class="px-2 py-1 bg-surface-container-high text-[10px] font-bold rounded uppercase tracking-wider text-on-surface-variant">Parts</span>
+</td>
+<td class="px-8 py-6">
+<div class="text-sm">
+<p class="text-on-surface font-medium">Sept 15 - Dec 31</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Upcoming</p>
+</div>
+</td>
+<td class="px-8 py-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-[10px] font-bold tracking-widest uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                                        Scheduled
+                                    </span>
+</td>
+<td class="px-8 py-6 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Loyalty Maintenance</p>
+<p class="text-xs text-on-surface-variant">SRV-LOYAL-10</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<span class="text-lg font-bold text-primary">10%</span>
+</td>
+<td class="px-8 py-6">
+<span class="px-2 py-1 bg-surface-container-high text-[10px] font-bold rounded uppercase tracking-wider text-on-surface-variant">Maintenance</span>
+</td>
+<td class="px-8 py-6">
+<div class="text-sm">
+<p class="text-on-surface font-medium">Permanent</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Rolling Program</p>
+</div>
+</td>
+<td class="px-8 py-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-bold tracking-widest uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-dim"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-8 py-6 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 border-t border-outline-variant/15 flex justify-between items-center text-xs text-on-surface-variant">
+<p>Showing 1 to 3 of 12 active campaigns</p>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 bg-surface-container-high rounded disabled:opacity-50">Previous</button>
+<button class="px-3 py-1.5 bg-primary text-white rounded">Next</button>
+</div>
+</div>
+</div>
+<!-- Campaign Performance Stats Section -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 pb-12">
+<div class="p-6 bg-surface-container-lowest rounded-xl">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Total Savings Delivered</p>
+<h4 class="text-2xl font-bold text-on-surface">$24.8k</h4>
+<div class="mt-4 h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-[70%] bg-primary"></div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Avg. Conversion Rate</p>
+<h4 class="text-2xl font-bold text-on-surface">12.4%</h4>
+<div class="mt-4 flex items-center gap-1 text-[10px] font-bold text-emerald-600">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        +2.4% from last month
+                    </div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">New Vendor Signups</p>
+<h4 class="text-2xl font-bold text-on-surface">148</h4>
+<div class="mt-4 flex items-center gap-1 text-[10px] font-bold text-emerald-600">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        +15% week-over-week
+                    </div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Coupon ROI</p>
+<h4 class="text-2xl font-bold text-on-surface">4.2x</h4>
+<div class="mt-4 flex items-center gap-1 text-[10px] font-bold text-on-surface-variant">
+                        Stable performance
+                    </div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

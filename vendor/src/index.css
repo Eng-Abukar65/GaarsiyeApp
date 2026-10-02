@@ -1,0 +1,107 @@
+/* Leaflet map CSS — required for react-leaflet (used by admin delivery-zone/monitoring maps). */
+@import 'leaflet/dist/leaflet.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+  }
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer utilities {
+  .font-headline { font-family: 'Manrope', sans-serif; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .glass-header { 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px); 
+  }
+  .material-symbols-outlined {
+    display: inline-flex;
+    width: 1em;
+    min-width: 1em;
+    height: 1em;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    vertical-align: -0.125em;
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    direction: ltr;
+    font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ─── Report printing (Print / Save-as-PDF) ─────────────────────────────────
+   Hides app chrome so only the generated report is printed. */
+@media print {
+  .no-print,
+  aside,
+  header {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  #report-output {
+    margin: 0 !important;
+  }
+  #report-output table {
+    page-break-inside: auto;
+  }
+  #report-output tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  #report-output thead {
+    display: table-header-group;
+  }
+  @page {
+    size: A4 landscape;
+    margin: 12mm;
+  }
+}
+
+@keyframes reportLoading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+@layer components {
+  @media (max-width: 767px) {
+    table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    th,
+    td {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .recharts-responsive-container,
+    .leaflet-container {
+      min-height: 260px;
+    }
+  }
+}

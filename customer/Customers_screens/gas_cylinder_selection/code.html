@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gas Cylinder Delivery - Step 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .radio-custom:checked {
+            background-image: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27white%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Step 1 of 3</h2>
+</header>
+<!-- Progress Section -->
+<div class="flex flex-col gap-3 p-4">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium">Choose your cylinder</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">1 of 3</p>
+</div>
+<div class="h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-primary transition-all duration-300" style="width: 33.33%;"></div>
+</div>
+</div>
+<!-- Hero Image Section -->
+<div class="px-4 py-2">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Modern blue and silver industrial gas cylinders stacked neatly" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlEsP44Xa46uB7dkTn04D9c20n2QoItUF648RF4qcWXv-fvL9sSOcfUzJ2P8Sxo_jVhDQy6sLcCJNGIVDVUOUf2h0wJPQMAoEX8CULamMvwNscPg-ePd7MtIfRAFjZpplxfs5nvRSYfcIYhSPza14fQK9e9LTXxBJvN0WLUionqSKxig1i88SY8MDYESy2IuTeAABuMFDMWIcGuChM6JEMpkna-JsQND5kmxnd5IKm7mMIutaTQn-YaiIiYh_i7hKC4EH2ZXWjoH4');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h1 class="text-white text-2xl font-bold leading-tight">Delivery Selection</h1>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col p-4 max-w-2xl mx-auto w-full">
+<h2 class="text-2xl font-bold leading-tight mb-6 mt-2">Which size do you need?</h2>
+<div class="flex flex-col gap-4">
+<!-- Radio Option 1 -->
+<label class="group flex items-center gap-4 rounded-xl border border-slate-200 dark:border-slate-800 p-4 cursor-pointer hover:border-primary transition-colors bg-white dark:bg-slate-900/50">
+<input checked="" class="radio-custom h-6 w-6 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-primary checked:border-primary focus:ring-primary focus:ring-offset-background-dark" name="cylinder-size" type="radio" value="small"/>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Small (11kg)</p>
+<span class="text-primary font-bold">$25.00</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Perfect for outdoor BBQs and small heaters</p>
+</div>
+</label>
+<!-- Radio Option 2 -->
+<label class="group flex items-center gap-4 rounded-xl border border-slate-200 dark:border-slate-800 p-4 cursor-pointer hover:border-primary transition-colors bg-white dark:bg-slate-900/50">
+<input class="radio-custom h-6 w-6 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-primary checked:border-primary focus:ring-primary focus:ring-offset-background-dark" name="cylinder-size" type="radio" value="medium"/>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Medium (22kg)</p>
+<span class="text-primary font-bold">$45.00</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Best for regular residential cooking use</p>
+</div>
+</label>
+<!-- Radio Option 3 -->
+<label class="group flex items-center gap-4 rounded-xl border border-slate-200 dark:border-slate-800 p-4 cursor-pointer hover:border-primary transition-colors bg-white dark:bg-slate-900/50">
+<input class="radio-custom h-6 w-6 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-primary checked:border-primary focus:ring-primary focus:ring-offset-background-dark" name="cylinder-size" type="radio" value="large"/>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Large (44kg)</p>
+<span class="text-primary font-bold">$85.00</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Heavy duty for large families or businesses</p>
+</div>
+</label>
+</div>
+<!-- Info Box -->
+<div class="mt-8 p-4 rounded-xl bg-primary/10 border border-primary/20 flex gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-sm text-slate-600 dark:text-slate-400">Prices include local delivery fees and taxes. Selection can be changed before final checkout.</p>
+</div>
+</main>
+<!-- Footer Action -->
+<footer class="p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 sticky bottom-0">
+<div class="max-w-2xl mx-auto w-full">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+                Continue to Location
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</footer>
+</body></html>

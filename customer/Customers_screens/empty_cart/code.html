@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Empty Cart - Fuel &amp; Parts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#256af4",
+                "background-light": "#f5f6f8",
+                "background-dark": "#101622",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="p-6 flex items-center justify-between">
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-200/50 dark:bg-slate-800/50 text-slate-900 dark:text-slate-100 hover:bg-primary/20 transition-colors">
+<span class="material-icons-round">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-semibold">My Cart</h1>
+<div class="w-12"></div> <!-- Spacer for balance -->
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center px-8 text-center">
+<!-- Illustration Container -->
+<div class="relative mb-10">
+<!-- Decorative Glow -->
+<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"></div>
+<!-- Empty Cart Illustration -->
+<div class="relative w-64 h-64 bg-slate-800/40 rounded-full flex items-center justify-center border border-slate-700/50 shadow-2xl">
+<div class="relative">
+<span class="material-icons-round text-[120px] text-slate-600/50">shopping_cart</span>
+<!-- Floating Fuel Icon -->
+<div class="absolute -top-2 -right-2 w-16 h-16 bg-primary rounded-2xl shadow-lg flex items-center justify-center rotate-12">
+<span class="material-icons-round text-white text-3xl">local_gas_station</span>
+</div>
+<!-- Floating Spare Part Icon -->
+<div class="absolute -bottom-4 -left-4 w-14 h-14 bg-slate-700 rounded-xl shadow-lg flex items-center justify-center -rotate-12">
+<span class="material-icons-round text-primary text-2xl">settings_input_component</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="max-w-xs mx-auto mb-12">
+<h2 class="text-2xl font-bold mb-4 tracking-tight">Your Cart is Empty</h2>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                Looks like you haven't added anything to your cart yet. Fuel up or grab some spares to get started.
+            </p>
+</div>
+<!-- Action Button -->
+<button class="w-full max-w-sm bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 group transition-all">
+<span>Browse Services</span>
+<span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</main>
+<!-- Suggested Categories (Optional Bottom UI) -->
+<section class="p-8">
+<p class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-600 mb-6 text-center">Quick Start</p>
+<div class="grid grid-cols-2 gap-4 max-w-sm mx-auto">
+<div class="p-4 rounded-xl bg-slate-200/50 dark:bg-slate-800/40 border border-transparent hover:border-primary/50 transition-colors flex flex-col items-center gap-2 cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-icons-round text-primary">ev_station</span>
+</div>
+<span class="text-sm font-medium">Refuel</span>
+</div>
+<div class="p-4 rounded-xl bg-slate-200/50 dark:bg-slate-800/40 border border-transparent hover:border-primary/50 transition-colors flex flex-col items-center gap-2 cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-icons-round text-primary">build</span>
+</div>
+<span class="text-sm font-medium">Spare Parts</span>
+</div>
+</div>
+</section>
+<!-- Image for Context (Hidden but meets requirements) -->
+<div class="hidden">
+<img alt="background" data-alt="Modern dark automotive garage interior background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuBJL0bPg459_EzVkNEDhBAoBYXU2U0KiYWc6XNzPsZtzBtMwuUQRH-PgqMIWG42--uUH1Xsjdy3nNH44B71hqi62mCxqiXPtScg3M0zvQuPDcgAR7TOAZC9A-Ezg_jASi0xvP4Ba1sI551ntzBq8Ew7dNLrk_HjrDzLXeQrAFlHTNszMuqanIHgRH4UOfyieigxNtkRz-uFyIyGo2PUHPRI3eAXlKyJA7AcCZBK-HK0q_vkzJJs6IIOORF3MhulZwAdZm_NobUxg"/>
+</div>
+</body></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .radio-custom:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+            background-size: 100% 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<header class="flex items-center p-4 pb-2 justify-between">
+<button class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-start focus:outline-none">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Diesel Delivery</h2>
+</header>
+<div class="flex flex-col gap-3 p-4">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium leading-normal">Selection</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">1 of 3</p>
+</div>
+<div class="rounded-full bg-primary/20 h-2 w-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 33%;"></div>
+</div>
+</div>
+<main class="flex-grow">
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-2xl font-bold leading-tight px-4 text-left pb-2 pt-5">Choose your fuel</h1>
+<div class="flex flex-col gap-4 p-4">
+<label class="flex items-center gap-4 rounded-xl border border-solid border-slate-200 dark:border-slate-800 p-4 flex-row-reverse cursor-pointer hover:border-primary transition-colors group">
+<input checked="" class="radio-custom h-5 w-5 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0" name="fuel_selection" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal">Premium Diesel</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">$1.45 per litre</p>
+</div>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-solid border-slate-200 dark:border-slate-800 p-4 flex-row-reverse cursor-pointer hover:border-primary transition-colors group">
+<input class="radio-custom h-5 w-5 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0" name="fuel_selection" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal">High-Performance Diesel</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">$1.60 per litre</p>
+</div>
+</label>
+</div>
+<div class="px-4 py-8">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden mb-4 border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+<img alt="Delivery truck" class="w-full h-full object-cover opacity-60" data-alt="Modern diesel delivery truck on city street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuAtSFhYBwIDTfUCa-6ASaoNo8clznl7YIyjR3mGY5TtRaaeLpqn2_S3Tf_LiHjtqrC6Wk9Mm8I8iNlQx1z7mg5_-fcr0uZz3sfFudObwW8F1OymScOFtIpQPTddDzguqPW-E8HM0bIYKjUr0mIQWKChvDh2QM_sTH3Kq9dCZpfNe8lT9VOmvmalaXzFWllJ4EedeLbKQu-UklAn47B6gFNXBKlmo4_glImJVHwiJVURFWm0OvAMrFgrEO6NBYKtwHPXhxT7NBNn8"/>
+<div class="absolute bottom-3 left-3 flex items-center gap-2 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-200/50 dark:border-slate-700/50">
+<span class="material-symbols-outlined text-primary text-sm">local_shipping</span>
+<span class="text-xs font-medium">Estimated arrival: 25 mins</span>
+</div>
+</div>
+</div>
+</main>
+<footer class="p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 sticky bottom-0">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/25 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="truncate">Continue to Location</span>
+<span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+</button>
+</footer>
+</div>
+</body></html>

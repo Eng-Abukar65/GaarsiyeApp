@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fuel Quantity Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #256af4;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 10px rgba(37, 106, 244, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<div class="max-w-md mx-auto min-h-screen flex flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden relative">
+<!-- Header -->
+<header class="flex items-center px-4 py-6">
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold ml-4">Select Quantity</h1>
+</header>
+<main class="flex-1 px-6 pb-10">
+<!-- Title Section -->
+<div class="mb-10 mt-4">
+<h2 class="text-3xl font-extrabold tracking-tight mb-2">How much fuel?</h2>
+<p class="text-slate-500 dark:text-slate-400">Select the exact amount for your delivery.</p>
+</div>
+<!-- Visual Feedback / Display -->
+<div class="bg-primary/10 border border-primary/20 rounded-2xl p-8 mb-10 flex flex-col items-center justify-center text-center">
+<div class="flex items-baseline gap-2">
+<span class="text-6xl font-black text-primary">55</span>
+<span class="text-xl font-bold text-primary/70">Litres</span>
+</div>
+<div class="mt-4 flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">payments</span>
+<span class="text-sm font-semibold text-primary">Estimated: $92.40</span>
+</div>
+</div>
+<!-- Slider Control -->
+<div class="space-y-6 mb-12">
+<div class="flex justify-between items-end">
+<span class="text-sm font-bold uppercase tracking-widest text-slate-500">Volume</span>
+<div class="flex items-center gap-1">
+<span class="text-xs text-slate-400">Current rate:</span>
+<span class="text-xs font-bold">$1.68/L</span>
+</div>
+</div>
+<div class="relative flex items-center h-8">
+<div class="absolute w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+<div class="absolute h-2 bg-primary rounded-full" style="width: 55%;"></div>
+<input class="absolute w-full appearance-none bg-transparent cursor-pointer custom-slider focus:outline-none" max="100" min="5" type="range" value="55"/>
+</div>
+<div class="flex justify-between text-xs font-bold text-slate-400 px-1">
+<span>5L</span>
+<span>25L</span>
+<span>50L</span>
+<span>75L</span>
+<span>100L</span>
+</div>
+</div>
+<!-- Numerical Input Alternative -->
+<div class="mb-10">
+<label class="block text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Or Enter Manually</label>
+<div class="relative group">
+<input class="w-full bg-slate-100 dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 focus:border-primary focus:ring-0 rounded-xl px-4 py-4 text-lg font-bold transition-all placeholder:text-slate-400" placeholder="Enter amount..." type="number"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">LITRES</div>
+</div>
+</div>
+<!-- Quick Select Chips -->
+<div class="mb-12">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4">Quick Select</h3>
+<div class="grid grid-cols-3 gap-3">
+<button class="py-3 px-2 border-2 border-slate-200 dark:border-slate-800 rounded-xl font-bold hover:border-primary hover:text-primary transition-all bg-white dark:bg-slate-900/50">
+                        20L
+                    </button>
+<button class="py-3 px-2 border-2 border-primary bg-primary/10 rounded-xl font-bold text-primary transition-all">
+                        50L
+                    </button>
+<button class="py-3 px-2 border-2 border-slate-200 dark:border-slate-800 rounded-xl font-bold hover:border-primary hover:text-primary transition-all bg-white dark:bg-slate-900/50">
+                        80L
+                    </button>
+<button class="col-span-3 py-4 border-2 border-slate-200 dark:border-slate-800 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-primary hover:text-primary transition-all bg-white dark:bg-slate-900/50">
+<span class="material-symbols-outlined">local_gas_station</span>
+                        Full Tank
+                    </button>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action -->
+<footer class="p-6 bg-white dark:bg-slate-900/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 sticky bottom-0">
+<div class="flex items-center justify-between mb-4">
+<div>
+<p class="text-xs text-slate-500 font-medium">Total Amount</p>
+<p class="text-2xl font-black text-slate-900 dark:text-white">$92.40</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-500 font-medium">Included Taxes</p>
+<p class="text-sm font-bold text-slate-700 dark:text-slate-300">$8.40</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/25 transition-all flex items-center justify-center gap-2">
+                Continue to Delivery
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</footer>
+</div>
+</body></html>

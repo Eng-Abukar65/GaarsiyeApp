@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deliveries - VendorPortal</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#2b3437",
+              "on-secondary-fixed": "#3d3f42",
+              "tertiary-container": "#d3e0fd",
+              "primary": "#216489",
+              "primary-dim": "#0c587c",
+              "surface-container": "#eaeff1",
+              "on-tertiary-container": "#445068",
+              "surface-container-highest": "#dbe4e7",
+              "on-secondary-fixed-variant": "#5a5c5e",
+              "primary-fixed-dim": "#a9daff",
+              "tertiary-fixed": "#d3e0fd",
+              "primary-fixed": "#c8e6ff",
+              "secondary": "#5d5f62",
+              "on-error-container": "#752121",
+              "error-container": "#fe8983",
+              "inverse-primary": "#95d0fa",
+              "on-tertiary-fixed-variant": "#4e5a72",
+              "surface-dim": "#d1dce0",
+              "on-surface-variant": "#586064",
+              "tertiary": "#535f78",
+              "on-primary-container": "#0a577b",
+              "surface-bright": "#f8f9fa",
+              "on-background": "#2b3437",
+              "on-primary-fixed": "#004462",
+              "on-primary-fixed-variant": "#1d6186",
+              "on-primary": "#f3f8ff",
+              "surface": "#f8f9fa",
+              "surface-tint": "#216489",
+              "surface-container-high": "#e3e9ec",
+              "on-secondary-container": "#505254",
+              "primary-container": "#c8e6ff",
+              "secondary-dim": "#515356",
+              "on-secondary": "#f8f9fb",
+              "error": "#9f403d",
+              "surface-container-low": "#f1f4f6",
+              "secondary-fixed": "#e2e2e5",
+              "on-error": "#fff7f6",
+              "on-tertiary": "#f8f8ff",
+              "tertiary-fixed-dim": "#c5d2ee",
+              "error-dim": "#4e0309",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-dim": "#47536b",
+              "on-tertiary-fixed": "#323e54",
+              "surface-variant": "#dbe4e7",
+              "outline-variant": "#abb3b7",
+              "secondary-container": "#e2e2e5",
+              "background": "#f8f9fa",
+              "inverse-on-surface": "#9b9d9e",
+              "inverse-surface": "#0c0f10",
+              "secondary-fixed-dim": "#d3d4d7",
+              "outline": "#737c7f"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-50 flex flex-col py-6 px-4 gap-2 font-['Manrope'] antialiased border-r border-slate-100/50">
+<div class="mb-8 px-2">
+<h1 class="text-xl font-bold text-sky-900">VendorPortal</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest font-semibold mt-1">Management Suite</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Purchases</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">package_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-sky-700 font-semibold border-r-4 border-sky-700 bg-slate-200/50 rounded-lg" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-sm font-medium">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">person_pin</span>
+<span class="text-sm font-medium">Drivers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">handshake</span>
+<span class="text-sm font-medium">Suppliers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+<span class="text-sm font-medium">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="text-sm font-medium">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-colors rounded-lg mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 z-40 w-full ml-64 bg-white/80 backdrop-blur-xl border-b border-slate-100/50 flex justify-between items-center h-16 px-8 max-w-[calc(100%-16rem)]">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-sky-500/20 rounded-lg overflow-hidden transition-all">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-slate-100/50 border-none pl-10 pr-4 py-2 text-sm font-['Manrope'] focus:ring-0" placeholder="Search deliveries, drivers, or orders..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-500 hover:text-sky-600 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-100">
+<span class="text-sm font-semibold text-slate-700">Profile</span>
+<img alt="User Avatar" class="w-8 h-8 rounded-full object-cover border-2 border-slate-100" data-alt="professional corporate headshot of a middle-aged manager with a friendly smile, clean lighting, blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRw61DDoUf7BzTowyyD4S1kkSe7QqeZHwaeWVgLXDbMxQa1Onj2ZkQ49luIA1bkpB_bLLBg2fxLs5nwUO9GGwWZCVFuOBGqmfLThTSuUgC1Ysdyk1ylGSpnhr-Isirad5lbzXT2fFepASHJeBtfM_kAbqP_LFwIfCKshC4VWmgcJBNtHzjOnWq-0lZJyClNw9TVTZLcr6vuHEPNMFC9n24NDgfUpniGPZ1zXvpAN-pKZVoa9QEQA0SI1LebwTYFq-g1SK37ILraMU"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 p-8 max-w-[1600px] mx-auto min-h-screen">
+<!-- Header Section -->
+<section class="flex justify-between items-end mb-10">
+<div>
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Deliveries</h2>
+<p class="text-on-surface-variant font-medium">Real-time logistics monitoring and dispatch control.</p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                Assign Driver
+            </button>
+</section>
+<!-- Bento Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Real-time Tracking Map (Large) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-1 overflow-hidden h-[500px] relative">
+<div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md p-4 rounded-lg shadow-xl border border-white/20">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface">Live Network</span>
+</div>
+<p class="text-2xl font-bold font-headline">14 Active Routes</p>
+</div>
+<div class="w-full h-full rounded-lg bg-slate-200 overflow-hidden">
+<img alt="detailed navigation map interface showing multiple delivery routes with blue glowing lines and driver location pins across an urban landscape" class="w-full h-full object-cover" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApN9nVvRgXWD30UOSNIGmbgSVOpKIgqCWHk21HDvnLH22yuydy1HS4wKJnM7Gba71Du0_JEX1OfUB_y5MpjOoT5B5A1Uaf59hKOqxRoM6DB9h25Ucvy3ykVtO3Wy7zEHrg1OA8pdfu6QeTmnpyGxxEygeBZ_tb9pk08u4DI97k0HslQQlLpApeYT4hs2Uvu-fkM3udJ4aDuayvWb9jWjmIQEtJ6dzCADSKRW5XNLm7ZwnF9Q0GKRf4zOlBYZtJn2QHOa5okzyykIg"/>
+</div>
+</div>
+<!-- Stats Column -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="bg-primary text-white p-8 rounded-xl flex-1 flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-lg font-semibold opacity-80 mb-1">Efficiency Rate</h3>
+<p class="text-5xl font-extrabold font-headline">98.4%</p>
+</div>
+<div class="relative z-10 flex items-center gap-2 text-sm bg-white/10 w-fit px-3 py-1 rounded-full backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+2.1% from yesterday</span>
+</div>
+<!-- Abstract Background Shape -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container p-8 rounded-xl flex-1">
+<h3 class="text-lg font-semibold mb-4">Quick Driver Links</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-white/40 rounded-lg hover:bg-white transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<img alt="driver profile photo" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJPmmHG917sVQgbFHtGpxTuXOa7iTBUtWofqhPCQWswn8jpT-yncxm0iqQO_xkoBvi85dxVYM4Bpz_84klCBG-QDBKbzJ2x2AjWMWt9kIoEvC5ewACULVMdrkCofcARSfok7Ooup6mkqzZPv4f5gGelRb5QXVQ26shYkcehRvqrCAzVypR8E7NEsL1iUC0F-WfKh_xaeIYE_Ar8LZu24_frwWaT0r0Zrr5vo8XbCEBn7ZJTQ9IdSYXWQQQWc-dVdJHEnFJ9TXpu0o"/>
+<div>
+<p class="text-sm font-bold">Marcus Chen</p>
+<p class="text-xs opacity-70">Active • ID: 8821</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">call</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-white/40 rounded-lg hover:bg-white transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<img alt="driver profile photo" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp6oQi3LbOsHSxKfdpOUzp3gQ9su8xtp9ZW5fiUYsQZq99_7N8KQJsDsMDZ1bz3bA71UHvx843PqxlkUjb3Az_UPZdSAp-y70ct2sY7v5AlelyRTtR3qtYSrBrgp5Wf0dOIcn2B_kjZZhGrjvtCHsCEIElYzDITG0S_i_4QegmVLWU4al6Q5MkHYoCerQJ8VLIgAfQnXQ0rQUqFsuL6yDnPK1PSwqlE2dyICbKEqiIk_QgiPIgaxQle49hAmPPBWLMxJ2jMGNDXZo"/>
+<div>
+<p class="text-sm font-bold">Elena Rodriguez</p>
+<p class="text-xs opacity-70">En Route • ID: 7490</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">call</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery List Table Section -->
+<div class="col-span-12 bg-surface-container-lowest rounded-xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+<h3 class="text-xl font-bold font-headline">Recent Deliveries</h3>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-sm font-medium bg-surface-container-low rounded-lg hover:bg-surface-container-high transition-colors">Export CSV</button>
+<button class="px-4 py-2 text-sm font-medium bg-surface-container-low rounded-lg hover:bg-surface-container-high transition-colors">Filters</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-on-surface-variant uppercase text-[10px] font-bold tracking-[0.1em] bg-surface-container-low">
+<th class="px-8 py-4">Driver Name</th>
+<th class="px-8 py-4">Order ID</th>
+<th class="px-8 py-4">Status</th>
+<th class="px-8 py-4">Estimated Arrival</th>
+<th class="px-8 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">MC</div>
+<div>
+<p class="font-bold text-on-surface">Marcus Chen</p>
+<p class="text-xs text-on-surface-variant">Vehicle: Sprinter #4</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono text-sm text-on-surface-variant">#ORD-9921-X</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold uppercase tracking-wider">On The Way</span>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">schedule</span>
+<span class="text-sm font-semibold">14:45 PM</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">more_vert</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-xs">ER</div>
+<div>
+<p class="font-bold text-on-surface">Elena Rodriguez</p>
+<p class="text-xs text-on-surface-variant">Vehicle: E-Transit #12</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono text-sm text-on-surface-variant">#ORD-4450-Z</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-surface-container-high text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Picked Up</span>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">schedule</span>
+<span class="text-sm font-semibold">15:10 PM</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">more_vert</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-bold text-xs">SK</div>
+<div>
+<p class="font-bold text-on-surface">Sarah Kim</p>
+<p class="text-xs text-on-surface-variant">Vehicle: Honda Moto #1</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono text-sm text-on-surface-variant">#ORD-2101-A</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-[10px] font-bold uppercase tracking-wider">Assigned</span>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">schedule</span>
+<span class="text-sm font-semibold">16:30 PM</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">more_vert</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold text-xs">DB</div>
+<div>
+<p class="font-bold text-on-surface">David Brown</p>
+<p class="text-xs text-on-surface-variant">Vehicle: Sprinter #2</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono text-sm text-on-surface-variant">#ORD-8872-B</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-[10px] font-bold uppercase tracking-wider">Delivered</span>
+</td>
+<td class="px-8 py-6 text-on-surface-variant italic text-sm">Completed</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-low text-center">
+<button class="text-primary text-sm font-bold hover:underline">View All Delivery Records</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

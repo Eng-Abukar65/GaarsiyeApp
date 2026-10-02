@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VendorPortal - Reviews Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#2b3437",
+              "on-secondary-fixed": "#3d3f42",
+              "tertiary-container": "#d3e0fd",
+              "primary": "#216489",
+              "primary-dim": "#0c587c",
+              "surface-container": "#eaeff1",
+              "on-tertiary-container": "#445068",
+              "surface-container-highest": "#dbe4e7",
+              "on-secondary-fixed-variant": "#5a5c5e",
+              "primary-fixed-dim": "#a9daff",
+              "tertiary-fixed": "#d3e0fd",
+              "primary-fixed": "#c8e6ff",
+              "secondary": "#5d5f62",
+              "on-error-container": "#752121",
+              "error-container": "#fe8983",
+              "inverse-primary": "#95d0fa",
+              "on-tertiary-fixed-variant": "#4e5a72",
+              "surface-dim": "#d1dce0",
+              "on-surface-variant": "#586064",
+              "tertiary": "#535f78",
+              "on-primary-container": "#0a577b",
+              "surface-bright": "#f8f9fa",
+              "on-background": "#2b3437",
+              "on-primary-fixed": "#004462",
+              "on-primary-fixed-variant": "#1d6186",
+              "on-primary": "#f3f8ff",
+              "surface": "#f8f9fa",
+              "surface-tint": "#216489",
+              "surface-container-high": "#e3e9ec",
+              "on-secondary-container": "#505254",
+              "primary-container": "#c8e6ff",
+              "secondary-dim": "#515356",
+              "on-secondary": "#f8f9fb",
+              "error": "#9f403d",
+              "surface-container-low": "#f1f4f6",
+              "secondary-fixed": "#e2e2e5",
+              "on-error": "#fff7f6",
+              "on-tertiary": "#f8f8ff",
+              "tertiary-fixed-dim": "#c5d2ee",
+              "error-dim": "#4e0309",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-dim": "#47536b",
+              "on-tertiary-fixed": "#323e54",
+              "surface-variant": "#dbe4e7",
+              "outline-variant": "#abb3b7",
+              "secondary-container": "#e2e2e5",
+              "background": "#f8f9fa",
+              "inverse-on-surface": "#9b9d9e",
+              "inverse-surface": "#0c0f10",
+              "secondary-fixed-dim": "#d3d4d7",
+              "outline": "#737c7f"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-50 dark:bg-slate-900 flex flex-col py-6 px-4 gap-2 z-50">
+<div class="mb-8 px-4">
+<h1 class="text-xl font-bold text-sky-900 dark:text-sky-100 font-headline">VendorPortal</h1>
+<p class="text-xs text-slate-500 font-medium tracking-wider">Management Suite</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-sm font-medium">Purchases</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="text-sm font-medium">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person_pin">person_pin</span>
+<span class="text-sm font-medium">Drivers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="text-sm font-medium">Suppliers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sky-700 dark:text-sky-400 font-semibold border-r-4 border-sky-700 dark:border-sky-400 bg-slate-100 dark:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="rate_review">rate_review</span>
+<span class="text-sm font-medium">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="text-sm font-medium">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Component -->
+<header class="sticky top-0 z-40 w-full glass-nav border-b border-slate-100/50 dark:border-slate-800/50 h-16 flex justify-between items-center px-8">
+<div class="flex items-center bg-surface-container-low rounded-full px-4 py-1.5 w-96 focus-within:ring-2 focus-within:ring-sky-500/20 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-on-surface-variant" placeholder="Search reviews, orders, or customers..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-500 hover:text-sky-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-200 dark:border-slate-700">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Alex Rivera</p>
+<p class="text-[10px] text-on-surface-variant">Store Manager</p>
+</div>
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover" data-alt="Close-up portrait of a professional man with a friendly expression in a bright modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCanN6UfsQ63pskH_I95_P1ZOb1V0bUWYdzrEcSOaomvoF4I_5ml2agqe7Xz_VwTtu9iKlYkRsp7WMLQFHS1TpcSRKrWFVY60cqmvZREH8WSqOVvqt-wgjAIglWRxw7jrBu5lvTTfh86ckT7Y0-DZRJNiCzCzJX30IUt6ecY62Q89cZoeNAaWQYVkf-QGP7YuUwhnodVF8iR4a0CFkp2Au-jiN10Idkb3naUEdXbyJ6cTFm4SQXeQ7u05jV8Xd7TnY1OPTDWBMj-NI"/>
+</div>
+</div>
+</header>
+<section class="p-10 max-w-7xl mx-auto">
+<!-- Summary Bento Grid Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<!-- Main Rating Card -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl flex items-center justify-between">
+<div>
+<h2 class="text-on-surface-variant font-medium mb-1">Overall Satisfaction</h2>
+<div class="flex items-baseline gap-4">
+<span class="text-6xl font-extrabold font-headline text-on-surface tracking-tight">4.8</span>
+<div class="flex flex-col">
+<div class="flex text-primary">
+<span class="material-symbols-outlined filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star_half">star_half</span>
+</div>
+<span class="text-sm text-on-surface-variant">Based on 1,248 reviews</span>
+</div>
+</div>
+</div>
+<div class="hidden lg:block w-48 space-y-2">
+<!-- Rating Distribution Bars -->
+<div class="flex items-center gap-2 text-xs">
+<span class="w-4">5</span>
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[82%]"></div>
+</div>
+<span class="text-on-surface-variant">82%</span>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<span class="w-4">4</span>
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[12%]"></div>
+</div>
+<span class="text-on-surface-variant">12%</span>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<span class="w-4">3</span>
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[4%]"></div>
+</div>
+<span class="text-on-surface-variant">4%</span>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<span class="w-4">2</span>
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[1%]"></div>
+</div>
+<span class="text-on-surface-variant">1%</span>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<span class="w-4">1</span>
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[1%]"></div>
+</div>
+<span class="text-on-surface-variant">1%</span>
+</div>
+</div>
+</div>
+<!-- Secondary Metric Card -->
+<div class="bg-primary-container p-8 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-on-primary-container text-4xl mb-4" data-icon="speed">speed</span>
+<h3 class="text-on-primary-container font-bold text-xl font-headline">Fastest Responder</h3>
+</div>
+<p class="text-on-primary-container/80 text-sm">You respond to 98% of feedback in under 2 hours. Keep it up!</p>
+</div>
+</div>
+<!-- Filters & Actions -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold whitespace-nowrap">All Reviews</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-colors whitespace-nowrap">5 Stars</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-colors whitespace-nowrap">4 Stars</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-colors whitespace-nowrap">With Photos</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-colors whitespace-nowrap">Negative First</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 text-sm font-semibold text-primary px-4 py-2 border border-primary/20 rounded-lg hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="ios_share">ios_share</span>
+                        Export Report
+                    </button>
+</div>
+</div>
+<!-- Review Feed -->
+<div class="space-y-4">
+<!-- Review Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:translate-x-1 group">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="flex-shrink-0 flex md:flex-col items-center gap-4">
+<img alt="Sarah Jenkins" class="w-14 h-14 rounded-full object-cover" data-alt="Professional headshot of a smiling woman with glasses, soft natural daylight, bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4cgkpCNJd1PGCEPQU5tlsO9yG2FaDtWs4Gd0c-T8Bg50rr4rG-uw5ieBYc33OXcgu9-z-WCHY3N_trQkuG1X5ENmjlgaPx-lH2fSUXkq8ULIhvrWlxfyHY02bmrnfQKRMfYIxFbdUgxC9uXOi8dHudWkcJ6ucELED5URDzj9AYIAJVAgIWUQ31wN4zgbe89d0iGUfSImgANGA4y3EouQnEJaEwo5yjlvagTgHU2QkqAWGxfyno9Uo0ngXYOiIOZtZ9qzq0b1GNqw"/>
+<div class="md:text-center">
+<p class="font-bold text-on-surface text-sm">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant font-semibold tracking-wider uppercase">Verified Buyer</p>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Oct 24, 2023</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Exceptional quality and fast shipping</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                                The product exceeded my expectations. Not only was the build quality premium, but the customer support was incredibly helpful during the delivery process. Highly recommend this vendor!
+                            </p>
+<div class="flex items-center gap-4">
+<span class="text-xs bg-surface-container text-on-surface-variant px-3 py-1 rounded-full flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="tag">tag</span>
+                                    Order #ORD-88219
+                                </span>
+<button class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                                    Reply to review
+                                    <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:translate-x-1 group">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="flex-shrink-0 flex md:flex-col items-center gap-4">
+<img alt="Marcus Chen" class="w-14 h-14 rounded-full object-cover" data-alt="Modern close-up of a young man with a casual style against a minimalistic studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoyem8m2WkSCs7iBqx5URB5o7vM049Extb3oqF0xxXUwjHV2nXP4m-_i_gsN0lbax4VM_0xbnL4KxxCzgm4_3rTHk5HbPcu-fSWP-wPw_NIrf1aeQvg-I8VyOwDzwWW6moH4e-Ts2C8ku42gfJX3uOrlqQ10MHfZQ7Aebhj9UeC0d0HR0cl1uJlloadAqN8PfQZwRkksFDJru4uENB3vRB2gvVveaGvE5hP7L3alOgNFVbds7J6ycGBeXmS6_3L3_Pv9WRNiEZhlU"/>
+<div class="md:text-center">
+<p class="font-bold text-on-surface text-sm">Marcus Chen</p>
+<p class="text-[10px] text-on-surface-variant font-semibold tracking-wider uppercase">Verified Buyer</p>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star">star</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Oct 22, 2023</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Solid experience overall</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                                Good communication throughout. The item arrived well-packaged. Only docking one star because the tracking information was a bit slow to update, but the product itself is perfect.
+                            </p>
+<div class="flex items-center gap-4">
+<span class="text-xs bg-surface-container text-on-surface-variant px-3 py-1 rounded-full flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="tag">tag</span>
+                                    Order #ORD-77412
+                                </span>
+<div class="flex gap-2">
+<img alt="Product review photo" class="w-12 h-12 rounded-lg object-cover cursor-zoom-in" data-alt="Minimalist product photo of a sleek white tech accessory on a clean wooden desk surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtfVwI7Hx9foZCljkUc1Bb-6WkfVkiGKpAFPQ5-B4josMRIEdxjPkl4RxzMc4C6dtNYGyw45ouE_EGFYmxjEMDrUUEd_fE0nfrt9ryQI6bpFG_Qap93Nq6kw_6TjGAPBZePAS_L5qOqocux00nC7xt54boaJwLyrwNQp0HzVZpICjXB_qaIkiD0bpwIkY8PybNh7i3BRQfmikwiky83-_xKylNvw5asyf-JJx62hib41Xsl8hrPgnCok-3v4o0tPlayfJ1Ftg20zk"/>
+</div>
+<button class="text-xs font-bold text-primary hover:underline ml-auto flex items-center gap-1">
+                                    Reply to review
+                                    <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Card 3 (Replied State) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:translate-x-1 group">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="flex-shrink-0 flex md:flex-col items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-tertiary-container flex items-center justify-center text-tertiary font-bold text-lg">
+                                JR
+                            </div>
+<div class="md:text-center">
+<p class="font-bold text-on-surface text-sm">James Ross</p>
+<p class="text-[10px] text-on-surface-variant font-semibold tracking-wider uppercase">Verified Buyer</p>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg filled-icon" data-icon="star">star</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Oct 19, 2023</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Best service I've had this year</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                                I had a specific request for bulk shipping and they handled it without any hesitation. Will be using this vendor for all future office supplies.
+                            </p>
+<div class="bg-surface-container-low rounded-lg p-4 mb-4 border-l-4 border-primary/20">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-bold text-primary">You Replied</span>
+<span class="text-[10px] text-on-surface-variant">Oct 20, 2023</span>
+</div>
+<p class="text-xs text-on-surface-variant italic">"Thank you so much for the kind words, James! It was a pleasure helping you coordinate the bulk order for your office. We look forward to working with you again!"</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs bg-surface-container text-on-surface-variant px-3 py-1 rounded-full flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="tag">tag</span>
+                                    Order #ORD-99304
+                                </span>
+<button class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors ml-auto">Edit Reply</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex items-center justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors text-on-surface">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors text-on-surface">3</button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors text-on-surface">24</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+</body></html>
